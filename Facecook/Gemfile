@@ -20,6 +20,10 @@ gem 'uglifier', '>= 1.3.0'
 #AUTHENTICATION GEM
 gem 'devise'
 
+# User Authentication with Facebook
+gem 'omniauth-facebook'
+# Development ENV Variables
+gem 'figaro'
 
 
 
