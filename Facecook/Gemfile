@@ -20,6 +20,8 @@ gem 'uglifier', '>= 1.3.0'
 gem 'omniauth-facebook'
 gem 'devise'
 
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails', '~> 7.1.6'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
