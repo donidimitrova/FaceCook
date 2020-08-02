@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = 'a6ea523571894784d6826b6620368a8883d2b08e3d13f8ecf28421b961071dc53445b48ec0b88bb630936c8f964bcdd9f2271624e0bb29173b6147bccb9d04e1'
+  # config.secret_key = '8e2e273851017352e544564ffabd564f1478b5665c28786cd7b366b1f07474f7b350eb711b8a94eae72701b6cefdfd7eaefc54fb520f244a6a79ad957befbe77'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -126,7 +126,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = '59582f12d2284ad68c7fa46a59ffd2474d1549739b7cd4c956e151ab99fad3045c3f2323e3b1aa3488cd83f79221b174bdbf9c5d75ee647ddc8c33d759c35085'
+  # config.pepper = '877fe7449663a4fbb341b1f5f78b307355d384294fc95c2e6b6b343f3d5056e8a7c555c269dbf339c0069ff3e7c577eb2007bb2e3349c963df7b4d7896b217b3'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -271,7 +271,7 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  config.omniauth :facebook, ENV['FACEBOOK_APP_ID'], ENV['FACEBOOK_APP_SECRET'], scope: 'name,first_name, last_name, email, user_birthday'
+  # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
@@ -308,4 +308,9 @@ Devise.setup do |config|
   # When set to false, does not sign a user in automatically after their password is
   # changed. Defaults to true, so a user is signed in automatically after changing a password.
   # config.sign_in_after_change_password = true
+
+
+  #Update initializer
+  config.omniauth :facebook, "319903762702962", "dd673ced845e901f2bd77c43a0618373", callback_url: "http://localhost:3000/users/auth/facebook/callback"
+
 end
