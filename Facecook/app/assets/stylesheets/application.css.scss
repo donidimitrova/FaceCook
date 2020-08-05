@@ -34,7 +34,13 @@
     margin-left: 3px;
     width: 50px; 
      }
-  
+     .jumbotron {
+      background-image:url("prova.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-top: 50px;
+      min-height: 360px;
+      }
 
 footer {
     margin-top: 45px;
