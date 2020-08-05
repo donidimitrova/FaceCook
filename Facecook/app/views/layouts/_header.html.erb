@@ -1,23 +1,24 @@
-<div class="navbar myNavbar navbar-dark bg-dark navbar-fixed-top">
-<div class="container-fluid">
-<div class="navbar-header">
-<button type="button" class="navbar-toggle collapsed" datatoggle="collapse"
-data-target="#collapibleMenu">
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-<span class="icon-bar"></span>
-</button>
-<a href="#" class="navbar-brand">Facecook</a>
-</div>
-<div class="collapse navbar-collapse" id="collapibleMenu">
-<ul class="nav navbar-nav navbar-right">
-<li><%= link_to "About", about_path %></li>
-<li><%= link_to "Contact", contact_path%></li>
-</ul>
-<ul class="nav navbar-nav navbar-left">
-<li><a href="#">Classifica Cuoco</a></li>
-<li><a href="#">Regolamento</a></li>
-</ul>
-</div>
-</div>
-</div>
+
+<!-- Fixed navbar -->
+    <nav class="navbar  navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <%= image_tag("logo.png", class: "img-responsive", id: "navbar-logo") %>
+
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Classifica Cuoco", classifica_path%></li>
+            <li><%= link_to "Regolamento", regolamento_path%></li>
+            <li><%= link_to "Login", login_path %></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
