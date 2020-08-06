@@ -2,15 +2,37 @@
 <!-- app/views/pages/home.html.erb -->
 
 <!--Add a Link to Facebook-->
-
+<% if user_signed_in? %>
 <div class="center jumbotron" >
 
 
-  <h1>Benvenuto a Facecook!</h1>
+  <h2>Benvenuto a Facecook <%= current_user.name %>!</h2>
+ 
+
+
+  <h3>
+    Sei entrato! Ora divertiti
+  </h3>
+
+
+</div>
+
+<% else %>
+            
+
+            <div class="center jumbotron" >
+
+
+  <h1>Benvenuto a Facecook! </h1>
 
   <h2>
     Clicca per registrarti
   </h2>
 
-  <%= link_to "Registrati ora!", '#', class: "btn btn-lg btn-primary" %>
+  <%= link_to "Registrati ora!", new_user_registration_path, class: "btn btn-lg btn-primary" %>
 </div>
+
+
+
+<% end %>
+
