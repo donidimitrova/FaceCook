@@ -24,6 +24,9 @@ gem 'bootstrap-sass'
 gem 'autoprefixer-rails', '~> 7.1.6'
 gem 'bootstrap-sass'
 
+gem 'font-awesome-rails'
+gem 'font-awesome-sass', '~> 4.4.0'
+
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
