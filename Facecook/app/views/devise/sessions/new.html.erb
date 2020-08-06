@@ -3,10 +3,23 @@
     rel="stylesheet"
     href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
     integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-<h2>Login</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
+
+  <body class="login   ">
+
+    <div class=" prova  ">
+
+        <h1 style="font-family: 'Rowdies', cursive; text-shadow: 1px 1px #b4b4b4; letter-spacing: 1px;">Login</h1>
+     
+          <p>
+            <a class="btn btn-social " href="<%= user_facebook_omniauth_authorize_path %>" style='font-size:17px'>
+            <i class="fab fa-facebook-square fa-2x"></i> Accedi con Facebook</a>
+        </p>
+
+          <p class="oppure"> <span> oppure </span> </p>
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field" style="padding-top:20px;">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
@@ -27,11 +40,11 @@
   <div class="actions">
   
     <%= f.submit :Entra, class: 'btn btn-success' %>
-   
-    <p>
-    <a class="btn btn-social " href="<%= user_facebook_omniauth_authorize_path %>">
-    <i class="fab fa-facebook-square fa-2x"></i> Accedi con Facebook</a>
-    </p>
+    <br />
+    <br />
+    <%= render "devise/shared/links" %>
   </div>
 <% end %>
-<%= render "devise/shared/links" %>
+
+ </div>
+</body>

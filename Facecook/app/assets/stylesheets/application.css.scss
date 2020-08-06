@@ -20,10 +20,18 @@
  @import "bootstrap-sprockets";
  @import "font-awesome-sprockets";
 @import "font-awesome";
+@import url('https://fonts.googleapis.com/css2?family=Rowdies&display=swap');
+
  
  .bodyContent {
     margin-top: 50px;
     }
+  body.login{
+    background-image: url("sfondo.jpg");
+    background-repeat: no-repeat;
+      background-size: cover;
+  }
+
 
     .myNavbar   {
         background-color: rgba(0, 0, 0, 0.884);
@@ -46,8 +54,8 @@
 footer {
     margin-top: 45px;
     padding-top: 5px;
-    border-top: 1px solid #eaeaea;
-    color: #777;
+    border-top: 1px solid #2e2e2e31;
+    color: rgb(43, 43, 43);
   }
   
   footer a {
@@ -73,4 +81,42 @@ footer {
   }
 
 
+ .prova{
+  display: inline;
+ text-align: center;
+ vertical-align: middle;
+  background-color: rgb(209, 158, 158);
+
+}
+
   
+  .oppure {
+    display: block;
+    height: 10px;
+    border-bottom: solid 1px #000;
+    text-align: center;
+    
+  }
+
+  .oppure span{
+    display: inline-block;
+    background-color: rgb(255, 255, 255);
+    padding: 0 10px;
+  }
+
+  .button a {
+    color: rgb(0, 0, 0);
+  text-decoration: none;
+
+  }
+  .button{
+    border-color: rgb(180, 180, 180);
+    background-color: rgba(221, 213, 213, 0.87);
+    box-shadow: 1px 0px rgb(170, 170, 170);
+    margin-bottom: 5px;
+  }
+
+  .btn2 a{
+    color: rgb(0, 0, 0);
+  text-decoration: none;
+  }
