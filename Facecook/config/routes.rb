@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   get 'regolamento' => 'pages#regolamento'
   get 'classifica' => 'pages#classifica'
   get 'login' => 'pages#login'
+  get 'sceglicategoria' => 'scegli#select'
 
 end
