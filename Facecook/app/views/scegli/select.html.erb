@@ -1,1 +1,85 @@
 <h1> SCEGLI LA CATEGORIA </h1>
+
+<h2>Ci siamo quasi... sei un cuoco o un amatore?</h2>
+
+<title>Seleziona categoria </title>
+
+<script type="text/javascript">
+
+
+
+    $('document').ready(function(){
+        $("#warrior").hide();
+        $("#elf").hide();
+        $("#ogre").hide();
+        $("#image").hide();
+        $("#categoria").hide();
+    });
+
+    $(function() {
+          $("#1").click( function()
+               {
+                    var $imgvisible = $('.war img:visible');
+                    alert("Hai selezionato "+$imgvisible.attr('title'));
+                    $('#warrior').show();
+                    $("#elf").hide();
+                    $("#ogre").hide();
+                    $('#user_categoria').val(1);
+
+               }
+          );
+
+          $("#2").click( function()
+               {
+                    var $imgvisible = $('.elf img:visible');
+                    alert("Hai selezionato "+$imgvisible.attr('title'));
+                    $('#elf').show();
+                    $("#ogre").hide();
+                    $("#warrior").hide();
+                    $('#user_categoria').val(2);
+
+               }
+          );
+
+
+
+
+    });
+
+
+</script>
+
+        <center><h1> <b> Scegli il tuo categoria </b></h1></center>
+
+        <div class="row">
+
+            <div class="col-md-4 war">
+                <%= image_tag("cuoco.jpg", :title => "guerriero", :id => "1", :style => "display: block; margin: 0px auto; width: 130px; height: 130px; cursor: pointer;") %>
+            </div>
+
+            <div class="col-md-4 elf">
+                <%= image_tag("cuoco.jpg", :title => "elfo", :id => "2", :style => "display: block; margin: 0px auto; width: 130px; height: 130px; cursor: pointer;" )%>
+            </div>
+
+        </div>
+        
+
+    </div>
+
+    <div class="col-md-1">
+    </div>
+
+<%= form_for @user, url: classifica_path do |f| %>
+<div class="field" id = "image"></div>
+
+
+              <div class="field" id="categoria">
+                <%= f.label :categoria %><br />
+                <%= f.number_field :categoria, autofocus: true, class: 'form-control' %>
+              </div>
+
+              <div class="actions">
+                <%= f.submit "Sign up" , :class=> "btn btn-lg btn-primary"  , :style => "margin-left: 460px; width:1000px; " %>
+              </div>
+
+<%end%>
