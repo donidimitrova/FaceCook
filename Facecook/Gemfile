@@ -22,10 +22,14 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails', '~> 7.1.6'
-gem 'bootstrap-sass'
+
 
 gem 'font-awesome-rails'
 gem 'font-awesome-sass', '~> 4.4.0'
+
+
+gem 'paperclip'
+
 
 
 # Use CoffeeScript for .coffee assets and views
