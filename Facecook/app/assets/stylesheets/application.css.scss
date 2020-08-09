@@ -32,6 +32,18 @@
       background-size: cover;
   }
 
+  body.registrazione{
+    background-image: url("reg.jpg");
+    background-repeat: no-repeat;
+      background-size: cover;
+    color: black;
+  }
+  
+
+  .prova img:hover {
+    box-shadow: 0 0 2px 1px rgba(9, 187, 247, 0.5);
+  }
+
 
     .myNavbar   {
         background-color: rgba(0, 0, 0, 0.884);
@@ -95,6 +107,7 @@ footer {
     height: 10px;
     border-bottom: solid 1px #000;
     text-align: center;
+    color: #000;
     
   }
 

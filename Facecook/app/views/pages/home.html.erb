@@ -14,8 +14,10 @@
   <% if current_user.avatar? %>
       <%= image_tag current_user.avatar.url(:thumb) %>
 
-    <% else current_user.image? %>
+    <% elsif current_user.image? %>
       <%= image_tag current_user.image %>
+    <% else %>
+      
     <% end %>
  
 
