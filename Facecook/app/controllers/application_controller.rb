@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
     end
 
 
+   
     def set_current_user
         @current_user |= User.where(:id => session[:id])
     end

@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   #Update Routes
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-
+  devise_for :users , controllers: {registrations: 'registrations', omniauth_callbacks: 'users/omniauth_callbacks'}, :path => '', :path_names => { :sign_in => "login", :sign_out => "logout", :sign_up => "register"}  
+  resources :users, only: [:new, :create, :edit, :update]
   resources :pages
+  resources :profile
 
   root to: 'pages#home'
   root 'pages#home'

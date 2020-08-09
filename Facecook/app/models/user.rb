@@ -13,6 +13,8 @@ class User < ApplicationRecord
   # Explicitly do not validate
   do_not_validate_attachment_file_type :avatar
 
+  do_not_validate_attachment_file_type :image
+
 
 
 #Add custom methods to the User model
@@ -30,10 +32,11 @@ class User < ApplicationRecord
             user.email = auth.info.email
             user.password = Devise.friendly_token[0,20]
             user.name = auth.info.name   # assuming the user model has a name
-            user.image ='cuoco.jpg' # assuming the user model has an image
+            user.image =auth.info.image # assuming the user model has an image
             user.username = auth.info.name
             user.categoria = nil
             user.save!
           end
         end
+        
 end
