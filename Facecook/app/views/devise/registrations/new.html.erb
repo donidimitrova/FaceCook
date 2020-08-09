@@ -2,7 +2,7 @@
 
     $('document').ready(function(){
         $("#cuocorior").hide();
-        $("#amatore").hide();
+        $("#appassionato").hide();
         $("#ogre").hide();
         $("#image").hide();
         $("#categoria").hide();
@@ -14,7 +14,7 @@
                     var $imgvisible = $('.cuoco img:visible');
                     alert("Hai selezionato "+$imgvisible.attr('title'));
                     $('#cuocorior').show();
-                    $("#amatore").hide();
+                    $("#appassionato").hide();
                     $("#ogre").hide();
                     $('#user_categoria').val(1);
 
@@ -23,9 +23,9 @@
 
           $("#2").click( function()
                {
-                    var $imgvisible = $('.amatore img:visible');
+                    var $imgvisible = $('.appassionato img:visible');
                     alert("Hai selezionato "+$imgvisible.attr('title'));
-                    $('#amatore').show();
+                    $('#appassionato').show();
                     $("#ogre").hide();
                     $("#cuocorior").hide();
                     $('#user_categoria').val(2);
@@ -64,6 +64,7 @@
 
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
 
      <div class="field" style="padding-top:10px;">
@@ -122,13 +123,13 @@
               </div>
             </div>
         </div>
-        <div class="col-md-4 amatore">
+        <div class="col-md-4 appassionato">
            
            <div class="card">
-              <div class="card-header amatore"><%= image_tag("cuoca.png", :title => "amatore", :id => "2", :style => "display: block; margin: 0px auto; width: 130px; height: 130px; cursor: pointer;border-radius: 50%; border-radius: 50%;" )%></div>
+              <div class="card-header appassionato"><%= image_tag("cuoca.png", :title => "appassionato", :id => "2", :style => "display: block; margin: 0px auto; width: 130px; height: 130px; cursor: pointer;border-radius: 50%; border-radius: 50%;" )%></div>
 
               <div class="card-body">
-                <h4 class="card-title">Amatore</h4>
+                <h4 class="card-title">Appassionato</h4>
               </div>
             </div>
         </div>
@@ -147,9 +148,17 @@
        </div>
    </div>
 </div>
+     <div class="row" style="padding-top:10px;">
+   <div class="col-md-10 col-md-offset-1">
+       <div class="row">
+           <div class="col-md-3 col-md-offset-1"></div>
+           <div class="col-md-4"> <%= recaptcha_tags %></div>
+       </div>
+   </div>
+</div>
 
 
- 
+
 
   <% if devise_mapping.rememberable? %>
     <div class="field">

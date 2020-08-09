@@ -311,6 +311,6 @@ Devise.setup do |config|
 
 
   #Update initializer
-  config.omniauth :facebook, "319903762702962", "dd673ced845e901f2bd77c43a0618373", callback_url: "http://localhost:3000/users/auth/facebook/callback"
+  config.omniauth :facebook, "319903762702962", "dd673ced845e901f2bd77c43a0618373",info_fields: 'name, first_name, last_name, email'
 
 end

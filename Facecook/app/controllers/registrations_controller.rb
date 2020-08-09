@@ -1,4 +1,14 @@
 class RegistrationsController < Devise::RegistrationsController
+  def create
+    #build the resource
+    build_resource(sign_up_params)   
+    #Verifying Captcha
+    if verify_recaptcha(model: resource) 
+      super
+    else
+      render 'new'
+    end
+    end
   protected
   
     def update_resource(resource, params)
