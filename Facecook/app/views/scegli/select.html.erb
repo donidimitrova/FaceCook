@@ -1,16 +1,10 @@
-<h1> SCEGLI LA CATEGORIA </h1>
 
-<h2>Ci siamo quasi... sei un cuoco o un amatore?</h2>
-
-<title>Seleziona categoria </title>
 
 <script type="text/javascript">
 
-
-
     $('document').ready(function(){
-        $("#warrior").hide();
-        $("#elf").hide();
+        $("#cuocorior").hide();
+        $("#appassionato").hide();
         $("#ogre").hide();
         $("#image").hide();
         $("#categoria").hide();
@@ -19,10 +13,10 @@
     $(function() {
           $("#1").click( function()
                {
-                    var $imgvisible = $('.war img:visible');
+                    var $imgvisible = $('.cuoco img:visible');
                     alert("Hai selezionato "+$imgvisible.attr('title'));
-                    $('#warrior').show();
-                    $("#elf").hide();
+                    $('#cuocorior').show();
+                    $("#appassionato").hide();
                     $("#ogre").hide();
                     $('#user_categoria').val(1);
 
@@ -31,11 +25,11 @@
 
           $("#2").click( function()
                {
-                    var $imgvisible = $('.elf img:visible');
+                    var $imgvisible = $('.appassionato img:visible');
                     alert("Hai selezionato "+$imgvisible.attr('title'));
-                    $('#elf').show();
+                    $('#appassionato').show();
                     $("#ogre").hide();
-                    $("#warrior").hide();
+                    $("#cuocorior").hide();
                     $('#user_categoria').val(2);
 
                }
@@ -49,25 +43,43 @@
 
 </script>
 
-        <center><h1> <b> Scegli il tuo categoria </b></h1></center>
+<!-- FontAwesome -->
+    
+  <link  href="https://fonts.googleapis.com/css2?family=Chilanka&family=Sriracha&display=swap" rel="stylesheet">
+
 
         <div class="row">
-
-            <div class="col-md-4 war">
-                <%= image_tag("cuoco.jpg", :title => "guerriero", :id => "1", :style => "display: block; margin: 0px auto; width: 130px; height: 130px; cursor: pointer;") %>
+        <h3 style="font-family: 'Chilanka', cursive;"> <b> Ci siamo quasi... </b></h3>
+        <h4 style="font-family: 'Sriracha', cursive;"> <b> A quale categoria appartieni? </b></h4>
+   <div class="col-md-10 col-md-offset-1">
+       <div class="row prova">
+        <div class="col-md-5 col-md-offset-1 cuoco">
+          <div class="card">
+              <div class="card-header cuoco"><%= image_tag("cuoco.jpg", :title => "cuoco", :id => "1", :style => "display: block; margin: 0px auto; width: 130px; height: 130px; cursor: pointer;border-radius: 50%;") %></div>
+              <div class="card-body">
+                <h4 class="card-title">Cuoco</h4>
+              </div>
             </div>
-
-            <div class="col-md-4 elf">
-                <%= image_tag("cuoco.jpg", :title => "elfo", :id => "2", :style => "display: block; margin: 0px auto; width: 130px; height: 130px; cursor: pointer;" )%>
-            </div>
-
         </div>
+        <div class="col-md-4 appassionato">
+           
+           <div class="card">
+              <div class="card-header appassionato"><%= image_tag("cuoca.png", :title => "appassionato", :id => "2", :style => "display: block; margin: 0px auto; width: 130px; height: 130px; cursor: pointer;border-radius: 50%; border-radius: 50%;" )%></div>
+
+              <div class="card-body">
+                <h4 class="card-title">Appassionato</h4>
+              </div>
+            </div>
+        </div>
+           
+
+       </div>
+   </div>
+</div>
         
 
     </div>
 
-    <div class="col-md-1">
-    </div>
 
 <%= form_for @user, url: profile_path(current_user) do |f| %>
 <div class="field" id = "image"></div>
@@ -78,8 +90,26 @@
                 <%= f.number_field :categoria, autofocus: true, class: 'form-control' %>
               </div>
 
-              <div class="actions">
-                <%= f.submit "Sign up" , :class=> "btn btn-lg btn-primary"  , :style => "margin-left: 460px; width:1000px; " %>
-              </div>
+ <div class="row" style="padding-top:10px;">
+   <div class="col-md-10 col-md-offset-1">
+       <div class="row">
+           <div class="col-md-4 col-md-offset-1"></div>
+           <div class="col-md-4"> 
+                <div class=" actions">
+                    <%= f.submit "Continua" , :class=> "btn btn-lg btn-success"   %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+              
 
 <%end%>
+
+
+
+
+
+  
+ 
+
