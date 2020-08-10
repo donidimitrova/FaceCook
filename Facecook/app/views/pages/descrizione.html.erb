@@ -1,0 +1,51 @@
+
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&display=swap" rel="stylesheet">
+
+
+
+<div class="center jumbotron descrizione" style="text-align: center;">
+<h1 style="font-family: 'Rowdies', cursive;  letter-spacing: 1px;">  Descrizione</h1>
+
+
+  <h3 style="font-family: 'Merriweather', serif;"> <strong> Sei un cuoco o un appasionato di cucina? <br /> Allora questa è la webapp adatta per te!</strong> </h3><br />
+  <h4 style="font-family: 'Merriweather', serif;">Qui troverai i migliori professionisti del mondo che condivideranno le loro ricette con te. <br /> <br />
+  Dovrai scegliere la categoria a cui appartieni tra cuoco o appassionato dopodichè il gioco è fatto. <br />
+  <div class="row">
+   <div class="col-md-10 col-md-offset-1">
+       <div class="row prova">
+        <div class="col-md-5 col-md-offset-1 cuoco">
+          <div class="card">
+              <div class="card-header cuoco"><%= image_tag("cuoco.jpg", :title => "cuoco", :id => "1", :style => "display: block; margin: 0px auto; width: 130px; height: 130px; cursor: pointer;border-radius: 50%;") %></div>
+              <div class="card-body">
+                <h4 class="card-title">Cuoco</h4>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-4 appassionato">
+           
+           <div class="card">
+              <div class="card-header appassionato"><%= image_tag("cuoca.png", :title => "appassionato", :id => "2", :style => "display: block; margin: 0px auto; width: 130px; height: 130px; cursor: pointer;border-radius: 50%; border-radius: 50%;" )%></div>
+
+              <div class="card-body">
+                <h4 class="card-title">Appassionato</h4>
+              </div>
+            </div>
+        </div>
+           
+
+       </div>
+   </div>
+
+        
+
+    </div>
+  Sarà molto semplice e veloce trovare la ricetta per il momento opportuno. <br /> <br /> 
+  Per qualsiasi dubbio o in caso di suggerimenti non esitare a conttatarci. <%= link_to "Contattaci ora", contact_path, class: "btn  btn-primary" %>  <br /><br />
+  
+  Sei ancora curioso? Clicca qui sotto per scoprire<br /> 
+  </h4>
+  <%= link_to "Registrati ora!", new_user_registration_path, class: "btn btn-lg btn-success" %>
+
+  
+</div>

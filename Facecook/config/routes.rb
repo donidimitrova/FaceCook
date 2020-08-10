@@ -11,9 +11,8 @@ Rails.application.routes.draw do
   root 'pages#home'
 
 
-
+  get 'descrizione' => 'pages#descrizione' 
   get 'help' => 'pages#help' 
-  get 'about' => 'pages#about' 
   get 'contact' => 'pages#contact'
   get 'regolamento' => 'pages#regolamento'
   get 'classifica' => 'pages#classifica'
