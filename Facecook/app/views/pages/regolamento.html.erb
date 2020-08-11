@@ -1,9 +1,37 @@
-<% provide(:title, "Help") %>
-<h1>Regolamento</h1>
-<p>
-  Get help on the Ruby on Rails Tutorial at the
-  <a href="http://www.railstutorial.org/#help">Rails Tutorial help section</a>.
-  To get help on this sample app, see the
-  <a href="http://www.railstutorial.org/book"><em>Ruby on Rails Tutorial</em>
-  book</a>.
-</p>
+
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&display=swap" rel="stylesheet">
+
+
+
+<div class="center jumbotron regolamento" >
+<h1 style="font-family: 'Rowdies', cursive;  letter-spacing: 1px;">  Regolamento</h1>
+
+
+  
+  <h4 style="font-family: 'Merriweather', serif;">
+  <ul>
+  <li>Un utente può registrarsi alla webapp attraverso facebook oppure inserendo le proprie
+credenziali richieste direttamente sulla piattaforma. </li> <br />
+  <li>Sarà richiesta la categoria di appartenenza e potrà essere selezionata una tra le due scelte: cuoco o appassionato.</li> <br />
+  <li>Un utente appassionato potrà ricercare e visionare diverse ricette in base alle proprie esigenze.
+  Avrà la possibilità di valutare ogni ricetta con un voto e di visionare la
+classifica dei cuochi basata sul punteggio ottenuto dalle diverse ricette inserite da
+quest’ultimi.</li> <br />
+  <li> Un utente cuoco può inserire delle ricette e visionare la
+classifica dei cuochi a cui appartiene.</li><br />
+<li> Tutti gli utenti potranno modificare il proprio username,la password corrente, l'immagine che gli rappresenta
+e contattare gli amministratori della webapp.</li><br />
+<li>  Gli amministratori hanno accesso a tutte le funzionalità, ossia gestione degli utenti e
+gestione delle ricette inserite dai cuochi. Possono bannare gli utenti, modificare una ricetta oppure la classifica dei cuochi
+nel caso lo ritengono opportuno.</li><br />
+</ul>
+
+  Per qualsiasi dubbio o in caso di suggerimenti non esitare a conttatarci. <%= link_to "Contattaci ora", contact_path, class: "btn  btn-primary" %>  <br /><br />
+  
+  Clicca qui sotto per registrarti<br /> 
+  </h4>
+  <%= link_to "Registrati ora!", new_user_registration_path, class: "btn btn-lg btn-success" %>
+
+  
+</div>
