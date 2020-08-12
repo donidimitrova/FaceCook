@@ -38,6 +38,7 @@ class User < ApplicationRecord
             user.image =auth.info.image # assuming the user model has an image
 
             user.categoria = nil
+            user.descrizione= ' '
             user.save!
           end
         end
