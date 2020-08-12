@@ -1,34 +1,67 @@
 <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Imprima&display=swap" rel="stylesheet">
 <!-- app/views/pages/home.html.erb -->
 
 <!--Add a Link to Facebook-->
 <% if user_signed_in? %>
-<div class="center jumbotron" >
+<div class="center jumbotron entrato" style="text-align: center;" >
 
 
-  <h3 style="font-family: 'Rowdies', cursive;  letter-spacing: 1px;">Benvenuto a Facecook <%= current_user.name %>!</h3>
-  <%= current_user.name %>!
-  <%= current_user.username %>!
-  <%= current_user.cognome %>!
-  <%= current_user.categoria %>!
-  <% if current_user.avatar? %>
-      <%= image_tag current_user.avatar.url(:thumb) %>
-
-    <% elsif current_user.image? %>
-      <%= image_tag current_user.image %>
-    <% else %>
-      
-    <% end %>
- 
+  <h2 style="font-family: 'Trade Winds', cursive;
+  letter-spacing: 1px;"><br /> <br /><%= greet %>, <%= current_user.username %> !</h2>
 
 
-  <h3>
-    Sei entrato! Ora divertiti
+
+   
+</div>
+
+
+  <div class="row">
+   
+  <h3 style="font-family: 'Imprima', sans-serif;text-align: center;">
+    <strong>Che cosa vuoi preparare?</strong>
 
   </h3>
 
+   <div class="col-md-10 col-md-offset-1">
+       <div class="row prova">
+<div class="col-md-4 cuoco">
+           
+           <div class="card">
+              <div class="card-header colazione"><%= image_tag("colazione.jpg", :title => "colazione", :id => "2", :style => "display: block; margin: 0px auto; width: 150px; height: 150px; cursor: pointer;border-radius: 30%;border: 2.5px solid rgb(29, 29, 29);" )%></div>
 
-</div>
+              <div class="card-body">
+                <h4 class="card-title"style="font-family: 'Imprima', sans-serif;text-align: center;">La colazione</h4>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-4 cuoco">
+          <div class="card">
+              <div class="card-header pranzo"><%= image_tag("pranzo.jpg", :title => "pranzo", :id => "1", :style => "display: block; margin: 0px auto; width: 150px; height: 150px; cursor: pointer;border-radius: 30%; border: 2.5px solid rgb(29, 29, 29);") %></div>
+              <div class="card-body">
+                <h4 class="card-title"style="font-family: 'Imprima', sans-serif;text-align: center;">Il pranzo</h4>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-4 appassionato">
+           
+           <div class="card">
+              <div class="card-header cena"><%= image_tag("cena.jpg", :title => "cena", :id => "2", :style => "display: block; margin: 0px auto; width: 150px; height: 150px; cursor: pointer;border-radius: 30%;border: 2.5px solid rgb(29, 29, 29);" )%></div>
+
+              <div class="card-body">
+                <h4 class="card-title"style="font-family: 'Imprima', sans-serif;text-align: center;">La cena</h4>
+              </div>
+            </div>
+        </div>
+        
+        
+        
+           
+
+       </div>
+   </div>
+   </div>
 
 <% else %>
             

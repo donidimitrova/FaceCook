@@ -20,6 +20,15 @@
             <% if user_signed_in? %>
             <li><%= link_to "Classifica Cuoco", classifica_path%></li>
             <li><%= link_to current_user.email,edit_user_registration_path  %> </li>
+            <li>
+            <% if current_user.avatar? %>
+      <%= image_tag current_user.avatar.url(:thumb) , :style => " width: 50px; height: 50px;border-radius: 50%;"%>
+
+    <% elsif current_user.image? %>
+      <%= image_tag current_user.image , :style => "width: 50px; height: 50px;border-radius: 50%;"%>
+    <% else %>
+      
+    <% end %> </li>
             <%#            SISETMARE IMMAGINE ACCOUNT
             <li> <%= image_tag(current_user.image,alt: "MyInc Logo")%> <%#>   </li> %>
 

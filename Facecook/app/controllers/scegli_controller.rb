@@ -10,6 +10,8 @@ class ScegliController < ApplicationController
 
   def help
 
-  end
+	end
+	
+	
 
 end

@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   get 'classifica' => 'pages#classifica'
   get 'login' => 'pages#login'
   get 'sceglicategoria' => 'scegli#select'
+  get 'pasto' => 'scegli#pasto'
 
 end
