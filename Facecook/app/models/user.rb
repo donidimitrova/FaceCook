@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
   do_not_validate_attachment_file_type :image
 
-
+  
 
 #Add custom methods to the User model
 
@@ -41,5 +41,11 @@ class User < ApplicationRecord
             user.save!
           end
         end
+
+        after_create :welcome_send
+        def welcome_send
+          WelcomeMailer.welcome_send(self).deliver
+          
+        end 
         
 end
