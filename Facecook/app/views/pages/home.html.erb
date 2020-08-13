@@ -5,19 +5,9 @@
 
 <!--Add a Link to Facebook-->
  
- <script type="text/javascript">
-$(document).ready(function(){
-  setTimeout(function(){
-    $('#flash').remove();
-  }, 2000);
- })
-</script>
+
 <% if user_signed_in? %>
-<div id="flash">
-<% flash.each do |key, value| %>
-    <div class="alert alert-success"> <%= value %></div>
-  <% end %>
-</div>
+
 <div class="center jumbotron entrato" style="text-align: center;" >
 
 

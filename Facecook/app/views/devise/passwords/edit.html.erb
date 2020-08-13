@@ -1,6 +1,18 @@
-<h2>Cambio password</h2>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+
+ <link 
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+
+  <body class="newpassword   ">
+
+    <div class=" prova  ">
+<h2 style="font-family: 'Rowdies', cursive; text-shadow: 1px 1px #b4b4b4; letter-spacing: 1px;">Cambio password</h2>
+<br>
+  
+ <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
   <%= f.hidden_field :reset_password_token %>
 
@@ -22,4 +34,6 @@
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
+ </div>
+</body>
