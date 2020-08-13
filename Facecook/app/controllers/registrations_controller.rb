@@ -9,6 +9,10 @@ class RegistrationsController < Devise::RegistrationsController
       render 'new'
     end
     end
+    def after_update_path_for(resource)
+      flash[:notice] = "Account aggiornato"
+      edit_user_registration_path
+  end
   protected
   
     def update_resource(resource, params)

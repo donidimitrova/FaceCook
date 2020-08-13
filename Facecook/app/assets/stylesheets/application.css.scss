@@ -63,6 +63,13 @@
       min-height: 360px;
       }
 
+      body.edit {
+        background-image:url("edit.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 360px;
+        }
+
       .entrato {
         background-image:url("cover.jpg");
         background-repeat: no-repeat;
