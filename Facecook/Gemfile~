@@ -25,7 +25,6 @@ gem 'autoprefixer-rails', '~> 7.1.6'
 gem 'rails_admin'
 gem 'cancancan'
 gem 'dotenv-rails', groups: [:development, :test]
-gem 'mail_form'
 
 gem 'font-awesome-rails'
 gem 'font-awesome-sass', '~> 4.4.0'

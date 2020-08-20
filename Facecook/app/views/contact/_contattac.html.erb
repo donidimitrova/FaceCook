@@ -1,0 +1,58 @@
+<script>
+    $('document').ready(function(){
+      $("#success").hide();
+      $("#invia").click( function(e)
+      {
+        $("#success").show(400).delay(4000).hide(400);
+      });
+    });
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&display=swap" rel="stylesheet">
+
+
+
+<div class="center jumbotron contact">
+<div class="row text-center">
+<h1 style="font-family: 'Rowdies', cursive;  letter-spacing: 1px;">  Contatti </h1>
+</div>
+<div class="alert alert-success text-center" id="success" role="alert">
+  Il tuo messaggio è stato inviato correttamente!
+</div>
+<div class="row text-center">
+  <h3 style="font-family: 'Merriweather', serif;"> <strong> Hai qualche problema o vuoi suggerirci qualcosa? <br /> Puoi inviarci un'email</strong> </h3><br />
+</div>  
+
+  <form action="/contact" accept-charset="UTF-8" data-remote="true" method="post"><input name="utf8" type="hidden" value="&#x2713;" />
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Email</label>
+    <%if user_signed_in?%>
+    <input type="email" class="form-control" id="contact_email" name="contact[email]" value="<%=current_user.email%>" readonly>
+    <%else%>
+    <input type="email" required="required" class="form-control" id="contact_email" name="contact[email]" placeholder="Inserisci il tuo indirrizzo email...">
+    <%end%>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Oggetto</label>
+     <input type="text" required="required" class="form-control" id="contact_subject" name="contact[subject]" placeholder="Inserisci l'oggetto del tuo messaggio...">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Messaggio</label>
+    <textarea class="form-control" required="required" id="contact_message" rows="3" name="contact[message]" placeholder="Inserisci qui il tuo messaggio..."></textarea>
+  </div>
+        <div class= "hidden">
+        <label for="home_nickname">Nickname</label>
+        <input hint="Leave this field blank!" type="text" name="contact[nickname]" id="contact_nickname" />
+      </div>
+  <div class="row text-center">
+   <input type="submit" id="invia" class="btn btn-primary" name="commit" data-disable-with="Invia" value="Invia"/>
+  </div>
+<div class="col-md-6" id="flash-message">
+ <%= render 'flash' %>
+</div>
+  
+
+  
+</div>
+
