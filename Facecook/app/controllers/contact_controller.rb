@@ -6,16 +6,15 @@ class ContactController < ApplicationController
   def create
     @contact = Contact.new(params[:contact])
     @contact.request = request
-    respond_to do |format|
+
       if @contact.deliver
         # re-initialize Home object for cleared form
         @contact = Contact.new
-        format.html { render 'contattaci'}
-        format.js   { flash.now[:success] = @message = "Thank you for your message. I'll get back to you soon!" }
+        flash[:success] = 'Messaggio inviato!'
+        redirect_to :contattaci
       else
-        format.html { render 'contattaci' }
-        format.js   { flash.now[:error] = @message = "Message did not send." }
+        flash[:danger] = 'Errore! Il messaggio non è stato inviato'
+        redirect_to :contattaci
       end
-    end
   end
 end
