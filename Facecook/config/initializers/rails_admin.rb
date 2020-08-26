@@ -1,6 +1,7 @@
 RailsAdmin.config do |config|
 
   ### Popular gems integration
+  #messo per far si che se un utente non e` admin e prova ad accedere al pannello di gestione allora viene ridiretto alla home
   config.authorize_with do
     redirect_to main_app.root_path unless current_user.admin == true
   end

@@ -11,7 +11,6 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
   root 'pages#home'
-  root 'contact#contattaci'
 
   get 'descrizione' => 'pages#descrizione' 
   get 'help' => 'pages#help' 
