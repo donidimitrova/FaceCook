@@ -28,10 +28,11 @@ nel caso lo ritengono opportuno.</li><br />
 </ul>
 
   Per qualsiasi dubbio o in caso di suggerimenti non esitare a conttatarci. <%= link_to "Contattaci ora", contattaci_path, class: "btn  btn-primary" %>  <br /><br />
-  
+  <%if user_signed_in?%>
+  <%else%>
   Clicca qui sotto per registrarti<br /> 
   </h4>
   <%= link_to "Registrati ora!", new_user_registration_path, class: "btn btn-lg btn-success" %>
-
+  <%end%>
   
 </div>
