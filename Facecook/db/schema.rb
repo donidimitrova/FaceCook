@@ -10,11 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_08_28_083845) do
+=======
+ActiveRecord::Schema.define(version: 2020_08_26_120813) do
+>>>>>>> e136735d3f9f20d20f0938b51fd705ef8c71c79b
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+<<<<<<< HEAD
   create_table "recipes", force: :cascade do |t|
     t.string "nome"
     t.string "categoria"
@@ -33,6 +38,8 @@ ActiveRecord::Schema.define(version: 2020_08_28_083845) do
     t.datetime "immagine_updated_at"
   end
 
+=======
+>>>>>>> e136735d3f9f20d20f0938b51fd705ef8c71c79b
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -53,6 +60,10 @@ ActiveRecord::Schema.define(version: 2020_08_28_083845) do
     t.bigint "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.text "descrizione"
+<<<<<<< HEAD
+=======
+    t.boolean "admin", default: false
+>>>>>>> e136735d3f9f20d20f0938b51fd705ef8c71c79b
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -12,7 +12,7 @@ en:
       invalid: "%{authentication_keys} o password non valida."
       locked: "Il tuo account è bloccato."
       last_attempt: "Hai ancora un tentativo prima che il tuo account sia bloccato."
-      not_found_in_database: "%{authentication_keys} o password non valida."
+      not_found_in_database: "Non valido %{authentication_keys} o password."
       timeout: "La tua sessione è scaduta. Accedi di nuovo per continuare."
       unauthenticated: "Devi accedere o registrarti prima di continuare."
       unconfirmed: "Devi confermare il tuo indirizzo email prima di continuare."

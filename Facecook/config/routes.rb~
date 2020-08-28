@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
+=======
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+>>>>>>> e136735d3f9f20d20f0938b51fd705ef8c71c79b
   #Update Routes
 
   devise_for :users , controllers: { :omniauth_callbacks =>'users/omniauth_callbacks',
@@ -6,6 +10,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :edit, :update]
   resources :pages
   resources :profile
+<<<<<<< HEAD
 
   root to: 'pages#home'
   root 'pages#home'
@@ -14,10 +19,27 @@ Rails.application.routes.draw do
   get 'descrizione' => 'pages#descrizione' 
   get 'help' => 'pages#help' 
   get 'contact' => 'pages#contact'
+=======
+  resources :contact, only: [:contattaci, :new, :create]
+
+  root to: 'pages#home'
+  root 'pages#home'
+ #root 'contact#contattaci'
+
+  get 'descrizione' => 'pages#descrizione' 
+  get 'help' => 'pages#help' 
+  get 'contattaci' => 'contact#contattaci'
+>>>>>>> e136735d3f9f20d20f0938b51fd705ef8c71c79b
   get 'regolamento' => 'pages#regolamento'
   get 'classifica' => 'pages#classifica'
   get 'login' => 'pages#login'
   get 'sceglicategoria' => 'scegli#select'
   get 'pasto' => 'scegli#pasto'
+<<<<<<< HEAD
+=======
+  get 'colazione' => 'pages#colazione'
+  get 'pranzo' => 'pages#pranzo'
+  get 'cena' => 'pages#cena'
+>>>>>>> e136735d3f9f20d20f0938b51fd705ef8c71c79b
 
 end

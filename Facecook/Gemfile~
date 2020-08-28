@@ -22,7 +22,13 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails', '~> 7.1.6'
+<<<<<<< HEAD
 
+=======
+gem 'rails_admin'
+gem 'cancancan'
+gem 'dotenv-rails', groups: [:development, :test]
+>>>>>>> e136735d3f9f20d20f0938b51fd705ef8c71c79b
 
 gem 'font-awesome-rails'
 gem 'font-awesome-sass', '~> 4.4.0'
