@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :edit, :update]
   resources :pages
   resources :profile
-  resources :recipes
 
   root to: 'pages#home'
   root 'pages#home'

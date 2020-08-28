@@ -1,0 +1,9 @@
+<h2>Details about #{@recipe.nome}</h2>
+<ul id="details">
+  <li>
+    Nome:
+    <%= @recipe.nome %>
+  </li>
+  
+</ul>
+<%= link_to "Inserisci una  ricetta" ,new_recipe_path %>

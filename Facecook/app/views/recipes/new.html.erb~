@@ -1,0 +1,8 @@
+<%= simple_format @recipe, :html => { :multipart => true } do |f| %>
+	<%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a category") %>
+	<%= f.file_field :immagine%>
+	<%= f.input :nome, label: "Nome" %>
+	<%= f.input :descrizione %>
+	<%= f.input :link %>
+	<%= f.button :submit, :class => 'btn-custom2' %>
+<% end %>

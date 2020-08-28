@@ -23,7 +23,7 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails', '~> 7.1.6'
 
-gem 'haml'
+
 gem 'font-awesome-rails'
 gem 'font-awesome-sass', '~> 4.4.0'
 

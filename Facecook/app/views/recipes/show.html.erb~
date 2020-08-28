@@ -1,0 +1,35 @@
+
+<h2>Dettagli per la ricetta: <%= @recipe.nome %></h2>
+<ul id="details">
+<div class="row">
+  <div class="col-md-5">
+  <li>
+    Nome:
+    <%= @recipe.nome %>
+  </li>
+  <li>
+    Categoria:
+    <%= @recipe.categoria %>
+  </li>
+  <li>
+    Descrizione:
+    <%= @recipe.descrizione %>
+  </li>
+  <li>
+    Link:
+    <%= @recipe.link %>
+  </li>
+</div>
+    <div class="col-md-5"><img src=<%= @recipe.immagine %> alt="Foto" width="300" height="300" ></div> 
+  
+ 
+</ul>
+
+<%= link_to "Inserisci una  ricetta" ,new_recipe_path %>
+<%= link_to "Torna alla lista delle ricette" ,recipes_path %>
+
+
+
+
+
+  	

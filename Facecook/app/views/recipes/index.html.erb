@@ -1,0 +1,30 @@
+<table id="recipes">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Categoria</th>
+      <th>Immagine</th>	
+      <th>Dettagli</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @recipes.each do |recipe| %> 
+      <tr>
+        <td>
+          <%= recipe.nome %>
+        </td>
+        <td>
+          <%= recipe.categoria %>
+        </td>
+	<td>
+          <%= recipe.immagine %>
+        </td>
+	<td>	
+	<%= link_to "Dettagli" ,recipe_path(recipe) %>
+	</td>      
+	</tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Inserisci una ricetta" ,new_recipe_path %>
+
