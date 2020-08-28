@@ -7,15 +7,11 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create, :edit, :update]
   resources :pages
   resources :profile
-<<<<<<< HEAD
-  resources :recipes
-=======
   resources :contact, only: [:contattaci, :new, :create]
->>>>>>> e136735d3f9f20d20f0938b51fd705ef8c71c79b
-
+  resources :recipes, only: [:new, :create, :index, :destroy, :show]
   root to: 'pages#home'
   root 'pages#home'
-
+  get 'recipes' =>'recipes#new'
   get 'descrizione' => 'pages#descrizione' 
   get 'help' => 'pages#help' 
   get 'contattaci' => 'contact#contattaci'

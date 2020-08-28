@@ -1,1 +1,36 @@
-ciao
+<div class="page-header"><h1>Carica Ricetta</h1></div>
+
+<%= form_for @recipe do |f| %>
+
+<div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome, autofocus: true, autocomplete: "nome" %>
+  </div>
+  <div class="field">
+    <%= f.label :categoria %><br />
+    <%= f.text_field :categoria, autofocus: true, autocomplete: "categoria" %>
+  </div>
+  <div class="field">
+    <%= f.label :link %><br />
+    <%= f.text_field :link, autofocus: true, autocomplete: "link" %>
+  </div>
+  <div class="field">
+    <%= f.label :descrizione %><br />
+    <%= f.text_area :descrizione,  cols: 40, rows: 3, autofocus: true, autocomplete: "descrizione" %>
+  </div>
+    <div class="form-group">
+    <%= f.label :immagine%>
+    <%= f.file_field :immagine %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= f.submit "Aggiorna", class: 'btn btn-primary' %>
+  </div>
+
+<% end %>
+
+
+
+

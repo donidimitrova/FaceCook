@@ -1,8 +1,15 @@
 class Recipe < ApplicationRecord
-devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
- 
-  has_attached_file :immagine, :styles { :recipe_index => "250x250", :recipe_show => "325x475" }, :default_url =>""
-  validates_attachment_content_type :immagine, content_type: /\Aimage\/.*\Z/
+
+
+                     has_attached_file :immagine, styles: { medium: "300x300", thumb: "100x100" }
+
+                     validates_attachment :immagine,
+                     content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }
+                     # Validate content type
+                     validates_attachment_content_type :immagine, content_type: /\Aimage/
+                     # Validate filename
+                     validates_attachment_file_name :immagine, matches: [/png\Z/, /jpe?g\Z/]
+                     # Explicitly do not validate
+                     do_not_validate_attachment_file_type :immagine
 
 end

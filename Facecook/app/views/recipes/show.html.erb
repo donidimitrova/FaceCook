@@ -18,9 +18,12 @@
   <li>
     Link:
     <%= @recipe.link %>
+
   </li>
-</div>
-    <div class="col-md-5"><%= image_tag @recipe.avatar.url(:thumb), :style => " width: 150px; height: 150px;border-radius: 20%;"   %></div> </div>
+    <li>
+    Immagine:
+    <%= image_tag @recipe.immagine.url(:thumb)   %>
+  </li>
 
 
 
