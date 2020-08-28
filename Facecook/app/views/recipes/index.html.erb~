@@ -2,16 +2,20 @@
   <thead>
     <tr>
       <th>Nome</th>
+      <th>Descrizione</th>
       <th>Categoria</th>
       <th>Immagine</th>	
       <th>Dettagli</th>
     </tr>
   </thead>
   <tbody>
-    <% @recipes.each do |recipe| %> 
+    <% @recipe.each do |recipe| %> 
       <tr>
         <td>
           <%= recipe.nome %>
+        </td>
+         <td>
+          <%= recipe.descrizione %>
         </td>
         <td>
           <%= recipe.categoria %>

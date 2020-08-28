@@ -19,8 +19,8 @@
             
 
             <% if user_signed_in? %>
-            <li><%= link_to "Ricetta", recipes_path %></li>
-            <li><%= link_to "Regolamento", regolamento_path%></li>    
+            <li><%= link_to "Regolamento", regolamento_path%></li>
+	    <li><%= link_to "Ricetta", recipes_path %></li>
             <% if current_user.categoria==2 %>
             <li><%= link_to "Classifica Cuochi", classifica_path%></li>
             <%end%>

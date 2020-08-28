@@ -18,11 +18,19 @@
   <li>
     Link:
     <%= @recipe.link %>
+
   </li>
 </div>
-    <div class="col-md-5"><img src=<%= @recipe.immagine %> alt="Foto" width="300" height="300" ></div> 
-  
- 
+<div class="col-md-2">
+    <li>
+    Immagine:
+    <%= image_tag @recipe.immagine.url(:thumb)   %>
+  </li>
+</div>
+</div
+
+
+
 </ul>
 
 <%= link_to "Inserisci una  ricetta" ,new_recipe_path %>
@@ -32,4 +40,4 @@
 
 
 
-  	
+
