@@ -8,7 +8,8 @@
   </div>
   <div class="field">
     <%= f.label :categoria %><br />
-    <%= f.text_field :categoria, autofocus: true, autocomplete: "categoria" %>
+
+<%= select :recipe, :categoria, ['Colazione','Pranzo','Cena'] %>
   </div>
   <div class="field">
     <%= f.label :link %><br />
@@ -28,7 +29,6 @@
   <div class="actions">
     <%= f.submit "Aggiorna", class: 'btn btn-primary' %>
   </div>
-  <%= link_to "Torna alla lista delle ricette" ,recipes_path %>
 
 <% end %>
 
