@@ -42,10 +42,11 @@
     </div>
   Sarà molto semplice e veloce trovare la ricetta per il momento opportuno. <br /> <br /> 
   Per qualsiasi dubbio o in caso di suggerimenti non esitare a conttatarci. <%= link_to "Contattaci ora", contattaci_path, class: "btn  btn-primary" %>  <br /><br />
-  
+  <%if user_signed_in?%>
+  <%else%>
   Sei ancora curioso? Clicca qui sotto per scoprire<br /> 
   </h4>
   <%= link_to "Registrati ora!", new_user_registration_path, class: "btn btn-lg btn-success" %>
-
+  <%end%>
   
 </div>
