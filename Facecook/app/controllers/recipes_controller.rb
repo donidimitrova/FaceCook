@@ -25,7 +25,7 @@ load_and_authorize_resource
 	def update
         id = params[:id]
         @recipe = Recipe.find(id)
-        @recipe.update_attributes!(params[:recipe].permit(:nome,:categoria,:immagine,:descrizione,:link,:category_id))
+        @recipe.update_attributes!(params[:recipe].permit(:nome,:categoria,:immagine,:descrizione,:link))
 		redirect_to recipes_path(@recipe)
 	end
 
