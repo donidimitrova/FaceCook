@@ -1,5 +1,6 @@
 class Recipe < ApplicationRecord
-
+ 
+  
 
                      has_attached_file :immagine, styles: { medium: "300x300", thumb: "100x100" }
 

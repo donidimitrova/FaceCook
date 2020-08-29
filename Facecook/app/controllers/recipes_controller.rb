@@ -8,10 +8,12 @@ load_and_authorize_resource
 
 	def new
 		@recipe = Recipe.new
+            
 	  end
 
 	def create
 		@recipe = Recipe.create!(params[:recipe].permit(:nome,:categoria,:immagine,:descrizione,:link))
+                
 
     if @recipe.save
       flash[:success] = "La ricetta è stata inserita!"
@@ -23,7 +25,7 @@ load_and_authorize_resource
 	def update
         id = params[:id]
         @recipe = Recipe.find(id)
-        @recipe.update_attributes!(params[:recipe].permit(:nome,:categoria,:immagine,:descrizione,:link))
+        @recipe.update_attributes!(params[:recipe].permit(:nome,:categoria,:immagine,:descrizione,:link,:category_id))
 		redirect_to recipes_path(@recipe)
 	end
 
