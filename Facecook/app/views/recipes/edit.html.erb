@@ -1,4 +1,4 @@
-<div class="page-header"><h1>Carica Ricetta</h1></div>
+<div class="page-header"><h1>Modifica Ricetta</h1></div>
 
 <%= form_for @recipe do |f| %>
 
@@ -8,7 +8,7 @@
   </div>
   <div class="field">
   <%= f.label :categoria %><br />
-  <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Seleziona categoria")%>
+  <%= f.select :category_id, @categories%>
   </div>
   <div class="field">
     <%= f.label :link %><br />
@@ -26,13 +26,9 @@
 
 
   <div class="actions">
-    <%= f.submit "Inserisci ricetta", class: 'btn btn-primary' %>
+    <%= f.submit "Aggiorna ricetta", class: 'btn btn-primary' %>
   </div>
   <br>
 <%= link_to "Torna alla lista delle ricette" ,recipes_path %>
 
 <% end %>
-
-
-
-

@@ -30,8 +30,8 @@
 
 </ul>
 <%if user_signed_in?%>
-<%= link_to "Inserisci una  ricetta" ,new_recipe_path %><br>
  <%if @recipe.user_id == current_user.id%>
+  <%= link_to "Modifica ricetta", edit_recipe_path(@recipe)%><br>
   <%=link_to "Elimina ricetta", recipe_path(@recipe), :method => :delete, data: { confirm: "Sei sicuro?" }%><br>
  <%end%>
 <%end%>
