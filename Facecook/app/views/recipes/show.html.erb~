@@ -20,14 +20,11 @@
     <%= @recipe.link %>
 
   </li>
-</div>
-<div class="col-md-2">
-    <li>
-    Immagine:
-    <%= image_tag @recipe.immagine.url(:thumb)   %>
-  </li>
-</div>
-</div
+  </div>
+  <div class="col-md-2">  
+    <%= image_tag @recipe.immagine.url(:medium)  %>
+  </div>
+  </div
 
 
 
