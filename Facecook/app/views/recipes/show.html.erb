@@ -9,7 +9,7 @@
   </li>
   <li>
     Categoria:
-    <%= @recipe.categoria %>
+    <%= @recipe.category.name %>
   </li>
   <li>
     Descrizione:
@@ -29,8 +29,12 @@
 
 
 </ul>
-
-<%= link_to "Inserisci una  ricetta" ,new_recipe_path %>
+<%if user_signed_in?%>
+<%= link_to "Inserisci una  ricetta" ,new_recipe_path %><br>
+ <%if @recipe.user_id == current_user.id%>
+  <%=link_to "Elimina ricetta", recipe_path(@recipe), :method => :delete, data: { confirm: "Sei sicuro?" }%><br>
+ <%end%>
+<%end%>
 <%= link_to "Torna alla lista delle ricette" ,recipes_path %>
 
 

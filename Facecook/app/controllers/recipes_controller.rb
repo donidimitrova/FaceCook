@@ -7,13 +7,13 @@ load_and_authorize_resource
 	end
 
 	def new
-		@recipe = Recipe.new
-            
-	  end
+		@recipe = current_user.recipes.build
+                @categories=Category.all.map{ |c| [c.name, c.id] }
+        end
 
 	def create
-		@recipe = Recipe.create!(params[:recipe].permit(:nome,:categoria,:immagine,:descrizione,:link))
-                
+		@recipe = current_user.recipes.build(recipe_params)
+                @recipe.category_id = params[:category_id] 
 
     if @recipe.save
       flash[:success] = "La ricetta è stata inserita!"
@@ -58,6 +58,6 @@ load_and_authorize_resource
 	
 	# Never trust parameters from the scary internet, only allow the white list through.
 	def recipe_params
-	  params.require(:recipe).permit(:nome,:categoria,:immagine, :descrizione, :link)
+	  params.require(:recipe).permit(:nome,:categoria,:immagine, :descrizione, :link,:category_id)
 	end
 end
