@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_08_29_135736) do
+=======
+ActiveRecord::Schema.define(version: 2020_08_29_141127) do
+>>>>>>> 343f32cd46ecb31b70946ba0b59ad05cc1a1313c
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categoria", force: :cascade do |t|
+    t.string "nome"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -25,7 +35,7 @@ ActiveRecord::Schema.define(version: 2020_08_29_135736) do
     t.string "nome"
     t.string "categoria"
     t.text "immagine"
-    t.text "descrizione"
+    t.string "descrizione"
     t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -38,7 +48,16 @@ ActiveRecord::Schema.define(version: 2020_08_29_135736) do
     t.bigint "immagine_file_size"
     t.datetime "immagine_updated_at"
     t.integer "category_id"
+<<<<<<< HEAD
     t.integer "user_id"
+=======
+    t.float "skill", default: 25.0
+    t.float "doubt", default: 8.333333333333334
+    t.integer "wins", default: 0
+    t.integer "losses", default: 0
+    t.integer "draws", default: 0
+    t.string "expectations"
+>>>>>>> 343f32cd46ecb31b70946ba0b59ad05cc1a1313c
   end
 
   create_table "users", force: :cascade do |t|

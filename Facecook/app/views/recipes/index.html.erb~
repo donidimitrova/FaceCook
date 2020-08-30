@@ -21,7 +21,7 @@
           <%= recipe.categoria %>
         </td>
 	<td>
-          <%= recipe.immagine %>
+          <%= image_tag recipe.immagine.url(:medium)   %>
         </td>
 	<td>	
 	<%= link_to "Dettagli" ,recipe_path(recipe) %>
