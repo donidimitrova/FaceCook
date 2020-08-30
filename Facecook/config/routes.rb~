@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :pages
   resources :profile
   resources :contact, only: [:contattaci, :new, :create]
-  resources :recipes, only: [:new, :create, :index, :destroy, :show,:edit]
+  resources :recipes
   root to: 'pages#home'
   root 'pages#home'
   get 'recipes' =>'recipes#new'
@@ -20,8 +20,8 @@ Rails.application.routes.draw do
   get 'login' => 'pages#login'
   get 'sceglicategoria' => 'scegli#select'
   get 'pasto' => 'scegli#pasto'
-  get 'colazione' => 'pages#colazione'
-  get 'pranzo' => 'pages#pranzo'
-  get 'cena' => 'pages#cena'
+  get 'colazione' => 'recipes#colazione'
+  get 'pranzo' => 'recipes#pranzo'
+  get 'cena' => 'recipes#cena'
 
 end

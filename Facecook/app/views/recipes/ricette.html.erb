@@ -1,3 +1,6 @@
+<%if @recipes.count==0%>
+ <h1>Non ci sono ricette in questa categoria</h1>
+<%else%>
 <table id="recipes">
   <thead>
     <tr>
@@ -30,5 +33,4 @@
     <% end %>
   </tbody>
 </table>
-<%= link_to "Inserisci una ricetta" ,new_recipe_path %>
-
+<%end%>

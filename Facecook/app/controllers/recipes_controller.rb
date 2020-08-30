@@ -1,18 +1,21 @@
 class RecipesController < ApplicationController
 before_action :find_recipe, only: [:show, :edit, :update, :destroy]
 skip_before_action :verify_authenticity_token
-load_and_authorize_resource
+
 	
         def index
-		@recipe =Recipe.all.order("created_at DESC")
+                authorize! :manage, Recipe
+		@recipes =Recipe.all.order("created_at DESC")
 	end
 
 	def new
+                authorize! :manage, Recipe
 		@recipe = current_user.recipes.build
                 @categories=Category.all.map{ |c| [c.name, c.id] }
         end
 
 	def create
+                authorize! :manage, Recipe
 		@recipe = current_user.recipes.build(recipe_params)
                 @recipe.category_id = params[:category_id] 
                 if @recipe.save
@@ -22,6 +25,7 @@ load_and_authorize_resource
         end
 
 	def update
+         authorize! :manage, Recipe
          @recipe.category_id = params[:category_id]
          if @recipe.update(recipe_params)
           redirect_to recipe_path(@recipe)
@@ -40,14 +44,25 @@ load_and_authorize_resource
 	end
 	
         def edit 
+            authorize! :manage, Recipe
             @categories=Category.all.map{ |c| [c.name, c.id] }        
         end
 	
         def destroy
+         authorize! :manage, Recipe
 	 @recipe.destroy
 	 redirect_to recipes_path
 	end
-
+        
+        def ricette
+          if params[:category].blank?
+	   @recipes =Recipe.all.order("created_at DESC")
+          else
+           @category_id=Category.find_by(name: params[:category]).id
+           @recipes=Recipe.where(:category_id => @category_id).order("created_at DESC")
+          end  
+        end
+        
 	private
 	# Use callbacks to share common setup or constraints between actions.
 	def set_recipe

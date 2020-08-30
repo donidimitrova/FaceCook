@@ -20,8 +20,6 @@ Rails.application.routes.draw do
   get 'login' => 'pages#login'
   get 'sceglicategoria' => 'scegli#select'
   get 'pasto' => 'scegli#pasto'
-  get 'colazione' => 'pages#colazione'
-  get 'pranzo' => 'pages#pranzo'
-  get 'cena' => 'pages#cena'
+  get 'ricette' => 'recipes#ricette'
 
 end

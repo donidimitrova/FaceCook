@@ -34,9 +34,12 @@
   <%= link_to "Modifica ricetta", edit_recipe_path(@recipe)%><br>
   <%=link_to "Elimina ricetta", recipe_path(@recipe), :method => :delete, data: { confirm: "Sei sicuro?" }%><br>
  <%end%>
+ <%if current_user.categoria==1%>
+  <%= link_to "Torna alla lista delle ricette" ,recipes_path %>
+ <%else%>
+  <%= link_to "Torna alle ricette" ,:back %>
+ <%end%>
 <%end%>
-<%= link_to "Torna alla lista delle ricette" ,recipes_path %>
-
 
 
 
