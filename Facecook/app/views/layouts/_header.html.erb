@@ -20,7 +20,7 @@
 
             <% if user_signed_in? %>
             <%if can? :manage,Recipe%>
-            <li><%= link_to "Ricetta", recipes_path %></li>
+            <li><%= link_to "Inserisci ricetta", new_recipe_path %></li>
             <%end%>
             <li><%= link_to "Regolamento", regolamento_path%></li>    
             <li><%= link_to "Classifica Cuochi", classifica_path%></li>

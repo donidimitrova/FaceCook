@@ -1,8 +1,12 @@
 
-<h2>Dettagli per la ricetta: <%= @recipe.nome %></h2>
+<h2><%= @recipe.nome %></h2>
 <ul id="details">
 <div class="row">
   <div class="col-md-5">
+  <li>
+    Autore:
+    <%= @recipe.user.name %> <%= @recipe.user.cognome%>
+  </li>
   <li>
     Nome:
     <%= @recipe.nome %>
@@ -34,10 +38,15 @@
   <%= link_to "Modifica ricetta", edit_recipe_path(@recipe)%><br>
   <%=link_to "Elimina ricetta", recipe_path(@recipe), :method => :delete, data: { confirm: "Sei sicuro?" }%><br>
  <%end%>
- <%if current_user.categoria==1%>
-  <%= link_to "Torna alla lista delle ricette" ,recipes_path %>
- <%else%>
-  <%= link_to "Torna alle ricette" ,:back %>
+ <!--<%= link_to "Torna alle ricette" ,:back %>-->
+ <%if @recipe.category.name=="Colazione"%>
+ <a href="/ricette?category=Colazione">Torna alle ricette</a>
+ <%end%>
+  <%if @recipe.category.name=="Pranzo"%>
+ <a href="/ricette?category=Pranzo">Torna alle ricette</a>
+ <%end%>
+  <%if @recipe.category.name=="Cena"%>
+ <a href="/ricette?category=Cena">Torna alle ricette</a>
  <%end%>
 <%end%>
 

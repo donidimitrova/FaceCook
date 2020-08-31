@@ -1,57 +1,55 @@
 class RecipesController < ApplicationController
+load_and_authorize_resource
+skip_authorize_resource :only => [:show, :ricette]
 before_action :find_recipe, only: [:show, :edit, :update, :destroy]
 skip_before_action :verify_authenticity_token
 
 	
         def index
+              # authorize! :manage, Recipe
 		@recipes =Recipe.all.order("created_at DESC")
-                authorize! :manage, @recipes
 	end
 
 	def new
-                authorize! :manage, Recipe
+             #   authorize! :manage, Recipe
 		@recipe = current_user.recipes.build
                 @categories=Category.all.map{ |c| [c.name, c.id] }
         end
 
 	def create
-                authorize! :manage, Recipe
+             #   authorize! :manage, Recipe
 		@recipe = current_user.recipes.build(recipe_params)
                 @recipe.category_id = params[:category_id] 
                 if @recipe.save
                  flash[:success] = "La ricetta è stata inserita!"
-                 redirect_to recipes_path
+                 redirect_to ricette_path
 	        end
         end
 
 	def update
-         authorize! :manage, Recipe
+         #authorize! :manage, Recipe
          @recipe.category_id = params[:category_id]
          if @recipe.update(recipe_params)
           redirect_to recipe_path(@recipe)
+          flash[:success] = 'Ricetta modificata!'
          else
           render 'edit'
          end
 	end
 
 	def show
-        #	id = params[:id]
-        #	if Recipe.exists?(id)
-         #   		@recipe = Recipe.find(id)
-        #	else
-         #	render html: 'Recipe does not exit'
-        #	end
 	end
 	
         def edit 
-            authorize! :manage, Recipe
+            #authorize! :manage, Recipe, user_id: user.id
             @categories=Category.all.map{ |c| [c.name, c.id] }        
         end
 	
         def destroy
-         authorize! :manage, Recipe
+         #authorize! :manage, Recipe
 	 @recipe.destroy
 	 redirect_to recipes_path
+         flash[:success] = 'Ricetta eliminata!'
 	end
         
         def ricette
