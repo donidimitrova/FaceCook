@@ -1,36 +1,17 @@
+<h1><%= params[:category]%></h1><br>
 <%if @recipes.count==0%>
  <h1>Non ci sono ricette in questa categoria</h1>
 <%else%>
-<table id="recipes">
-  <thead>
-    <tr>
-      <th>Nome</th>
-      <th>Descrizione</th>
-      <th>Categoria</th>
-      <th>Immagine</th>	
-      <th>Dettagli</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @recipes.each do |recipe| %> 
-      <tr>
-        <td>
-          <%= recipe.nome %>
-        </td>
-         <td>
-          <%= recipe.descrizione %>
-        </td>
-        <td>
-          <%= recipe.category.name %>
-        </td>
-	<td>
-          <%= image_tag recipe.immagine.url(:thumb)   %>
-        </td>
-	<td>	
-	<%= link_to "Dettagli" ,recipe_path(recipe) %>
-	</td>      
-	</tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="row">
+  <% @recipes.each do |recipe| %> 
+    <div class="col-md-3">
+      <div class="panel panel-default" onclick="location.href='/recipes/<%= recipe.id%>'">
+       <div class="panel-body">
+        <%= image_tag recipe.immagine.url(:medium), class: "recipe"%>
+       </div>
+       <div class="panel-footer" align="center"><%= recipe.nome%></div>
+      </div>
+    </div>
+<% end %>
+</div>
 <%end%>
