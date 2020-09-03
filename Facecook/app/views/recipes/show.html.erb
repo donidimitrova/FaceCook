@@ -18,9 +18,9 @@
 <br>
 <%if user_signed_in?%>  
   
-<button type="button" class="btn btn-info"> <a> <%= link_to "Aggiungi un voto",new_recipe_review_path(@recipe)%></a></button>
+<button type="button" class="btn btn-info "> <a> <%= link_to "Aggiungi un voto",new_recipe_review_path(@recipe)%></a></button>
  <%if @recipe.user_id == current_user.id%>
- <button type="button" class="btn btn-info"> <a> <%= link_to "Modifica ricetta",edit_recipe_path(@recipe)%></a></button>
+ <button type="button" class="btn btn-info "> <a> <%= link_to "Modifica ricetta",edit_recipe_path(@recipe)%></a></button>
  
   
  <%end%>
