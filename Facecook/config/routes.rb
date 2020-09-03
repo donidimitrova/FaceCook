@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   resources :pages
   resources :profile
   resources :contact, only: [:contattaci, :new, :create]
-  resources :recipes
+  resources :recipes do
+    resources :reviews
+  end
   root to: 'pages#home'
   root 'pages#home'
   get 'recipes' =>'recipes#new'

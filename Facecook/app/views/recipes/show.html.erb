@@ -1,39 +1,39 @@
-
 <h2><%= @recipe.nome %></h2>
 <ul id="details">
 <div class="row">
   <div class="col-md-5">
   <li>
-    Autore:
-    <%= @recipe.user.name %> <%= @recipe.user.cognome%>
+    <h4>Autore: 
+    <%= @recipe.user.name %> <%= @recipe.user.cognome%></h4>
   </li>
   <li>
-    Nome:
-    <%= @recipe.nome %>
+    <h4>Nome:
+    <%= @recipe.nome %></h4>
   </li>
   <li>
-    Categoria:
-    <%= @recipe.category.name %>
+    <h4>Categoria:
+    <%= @recipe.category.name %></h4>
   </li>
   <li>
-    Descrizione:
-    <%= @recipe.descrizione %>
+    <h4>Descrizione:
+    <%= @recipe.descrizione %></h4>
   </li>
   <li>
-    Ingredienti:
-    <%= @recipe.link %>
-
+    <h4>Ingredienti:
+    <%= @recipe.link %></h4>
+  </li>
+  <li>
+    <h4>Media voti:
+    <%= @average_review %> / 5</h4>
   </li>
   </div>
-  <div class="col-md-2">  
+  <div class="col-md-2">
     <%= image_tag @recipe.immagine.url(:medium),class:'img'  %>
   </div>
-  </div
-
-
-
+  </div>
 </ul>
-<%if user_signed_in?%>
+<%if user_signed_in?%>  
+  <%= link_to "Aggiungi un voto",new_recipe_review_path(@recipe)%><br>
  <%if @recipe.user_id == current_user.id%>
   <%= link_to "Modifica ricetta", edit_recipe_path(@recipe)%><br>
   <%=link_to "Elimina ricetta", recipe_path(@recipe), :method => :delete, data: { confirm: "Sei sicuro?" }%><br>
@@ -49,8 +49,3 @@
  <a href="/ricette?category=Cena">Torna alle ricette</a>
  <%end%>
 <%end%>
-
-
-
-
-

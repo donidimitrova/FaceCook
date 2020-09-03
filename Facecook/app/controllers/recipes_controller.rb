@@ -38,6 +38,11 @@ skip_before_action :verify_authenticity_token
 	end
 
 	def show
+		if @recipe.reviews.blank?
+			@average_review=0
+		else
+			@average_review=@recipe.reviews.average(:rating).round(1)
+		end
 	end
 	
         def edit 

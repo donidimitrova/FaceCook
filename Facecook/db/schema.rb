@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2020_08_29_135736) do
-=======
-ActiveRecord::Schema.define(version: 2020_08_29_141127) do
->>>>>>> 343f32cd46ecb31b70946ba0b59ad05cc1a1313c
+ActiveRecord::Schema.define(version: 2020_09_02_144022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,16 +44,21 @@ ActiveRecord::Schema.define(version: 2020_08_29_141127) do
     t.bigint "immagine_file_size"
     t.datetime "immagine_updated_at"
     t.integer "category_id"
-<<<<<<< HEAD
-    t.integer "user_id"
-=======
     t.float "skill", default: 25.0
     t.float "doubt", default: 8.333333333333334
     t.integer "wins", default: 0
     t.integer "losses", default: 0
     t.integer "draws", default: 0
     t.string "expectations"
->>>>>>> 343f32cd46ecb31b70946ba0b59ad05cc1a1313c
+    t.integer "user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "recipe_id"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -22,7 +22,7 @@ skip_before_action :verify_authenticity_token
                 @recipe.category_id = params[:category_id] 
                 if @recipe.save
                  flash[:success] = "La ricetta è stata inserita!"
-                 redirect_to ricette_path
+                 redirect_to recipe_path(@recipe)
 	        end
         end
 
@@ -38,6 +38,12 @@ skip_before_action :verify_authenticity_token
 	end
 
 	def show
+		
+		if @recipe.reviews.blank?
+			@average_review=0
+		else
+			@average_review=@recipe.reviews.average(:rating).round(1)
+		end
 	end
 	
         def edit 

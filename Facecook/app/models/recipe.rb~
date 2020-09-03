@@ -1,12 +1,8 @@
 class Recipe < ApplicationRecord
- 
-<<<<<<< HEAD
+  belongs_to :user
   belongs_to :category
-=======
-  
->>>>>>> 343f32cd46ecb31b70946ba0b59ad05cc1a1313c
 
-                     has_attached_file :immagine, styles: { medium: "300x300", thumb: "100x100" }
+                     has_attached_file :immagine, styles: { medium: "300x300", thumb: "100x100",quality:100 }
 
                      validates_attachment :immagine,
                      content_type: { content_type: ["image/jpeg", "image/gif", "image/png"] }

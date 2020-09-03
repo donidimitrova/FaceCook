@@ -1,6 +1,7 @@
 class Recipe < ApplicationRecord
   belongs_to :user
   belongs_to :category
+  has_many :reviews
 
                      has_attached_file :immagine, styles: { medium: "300x300", thumb: "100x100",quality:100 }
 

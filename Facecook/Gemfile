@@ -22,7 +22,7 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails', '~> 7.1.6'
-
+gem 'simple_form'
 gem 'haml'
 gem 'rails_admin'
 gem 'cancancan'
