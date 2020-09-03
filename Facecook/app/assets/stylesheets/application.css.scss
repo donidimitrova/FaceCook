@@ -182,13 +182,15 @@ footer {
     color: rgb(0, 0, 0);
   text-decoration: none;
   }
-.img{
-   
-    position: relative;
-    border-radius: 20vh;
-    box-shadow: 1vh 1vh 1vh rgba(0,0,0,.5)
-}
 
+.imgrecipe{
+    box-shadow: 1vh 1vh 1vh rgba(0,0,0,.5);
+    height: 30vh;
+    width: 50vh;
+    position: relative;
+    border-radius: 2vh;
+
+}
 .recipe{
   height:200px;
   width:100%;
@@ -210,3 +212,33 @@ footer {
   cursor: pointer;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 1);
 }
+a:link {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+a:active {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
+.cornice{
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 1vh 1vh 1vh rgba(0,0,0,.5);
+}
+
+

@@ -1,51 +1,38 @@
-<h2><%= @recipe.nome %></h2>
+<h1><%= @recipe.nome %></h1><br>
 <ul id="details">
 <div class="row">
-  <div class="col-md-5">
-  <li>
-    <h4>Autore: 
-    <%= @recipe.user.name %> <%= @recipe.user.cognome%></h4>
-  </li>
-  <li>
-    <h4>Nome:
-    <%= @recipe.nome %></h4>
-  </li>
-  <li>
-    <h4>Categoria:
-    <%= @recipe.category.name %></h4>
-  </li>
-  <li>
-    <h4>Descrizione:
-    <%= @recipe.descrizione %></h4>
-  </li>
-  <li>
-    <h4>Ingredienti:
-    <%= @recipe.link %></h4>
-  </li>
-  <li>
-    <h4>Media voti:
-    <%= @average_review %> / 5</h4>
-  </li>
+  <div class="col-md-4">
+  <%= image_tag @recipe.immagine.url(:medium),class:'imgrecipe'  %>
+  
   </div>
-  <div class="col-md-2">
-    <%= image_tag @recipe.immagine.url(:medium),class:'img'  %>
+  <div class="col-md-4 cornice">
+    <h4><b>Autore:</b> <%= @recipe.user.name %> <%= @recipe.user.cognome%></h4>
+    <h4><b>Nome:</b> <%= @recipe.nome %></h4>
+    <h4><b>Categoria:</b> <%= @recipe.category.name %></h4>
+    <h4><b>Descrizione:</b> <%= @recipe.descrizione %></h4>
+    <h4><b>Ingredienti:</b> <%= @recipe.link %></h4>
+    <h4><b>Media voti:</b> <%= @average_review %> / 5</h4>
   </div>
   </div>
 </ul>
+<br>
 <%if user_signed_in?%>  
-  <%= link_to "Aggiungi un voto",new_recipe_review_path(@recipe)%><br>
+  
+<button type="button" class="btn btn-info"> <a> <%= link_to "Aggiungi un voto",new_recipe_review_path(@recipe)%></a></button>
  <%if @recipe.user_id == current_user.id%>
-  <%= link_to "Modifica ricetta", edit_recipe_path(@recipe)%><br>
-  <%=link_to "Elimina ricetta", recipe_path(@recipe), :method => :delete, data: { confirm: "Sei sicuro?" }%><br>
+ <button type="button" class="btn btn-info"> <a> <%= link_to "Modifica ricetta",edit_recipe_path(@recipe)%></a></button>
+ 
+  
  <%end%>
  <!--<%= link_to "Torna alle ricette" ,:back %>-->
  <%if @recipe.category.name=="Colazione"%>
- <a href="/ricette?category=Colazione">Torna alle ricette</a>
+ <button type="button" class="btn btn-info"><a href="/ricette?category=Colazione">Torna alle ricette</a></button>
  <%end%>
   <%if @recipe.category.name=="Pranzo"%>
- <a href="/ricette?category=Pranzo">Torna alle ricette</a>
+ <button type="button" class="btn btn-info"><a href="/ricette?category=Pranzo">Torna alle ricette</a></button>
  <%end%>
   <%if @recipe.category.name=="Cena"%>
- <a href="/ricette?category=Cena">Torna alle ricette</a>
+ <button type="button" class="btn btn-info"><a href="/ricette?category=Cena">Torna alle ricette</a></button>
  <%end%>
+<button type="button" class="btn btn-danger"> <a> <%= link_to "Elimina ricetta",recipe_path(@recipe), :method => :delete, data: { confirm: "Sei sicuro?" }%></a></button>
 <%end%>
