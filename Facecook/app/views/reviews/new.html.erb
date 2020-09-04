@@ -1,9 +1,29 @@
 <div class="new-review-form">
-
 		<h1 style="font-family: 'Trade-Winds',cursive; letter-spacing:1px">Aggiungi un voto</h1>
+		<%= form_for([@recipe, @recipe.reviews.build]) do |f| %>
+    <fieldset class="rating center" >
+<%=f.radio_button :rating, 5, :id => "star5" %><label for="star5" title="5">5 Stars</label>
+<%=f.radio_button :rating, 4, :id => "star4" %> <label for="star4" title="4">4 Stars</label>
+<%=f.radio_button :rating, 3, :id => "star3" %> <label for="star3" title="3">3 Stars</label>
+<%=f.radio_button :rating, 2, :id => "star2" %> <label for="star2" title="2">2 Stars</label>
+<%=f.radio_button :rating, 1, :id => "star1" %> <label for="star1" title="1">1 Stars</label>
+<br>
+<br>
+<%= f.button :Conferma, :class => " btn-custom2" %>
+<br>
+<br>
+<%= link_to "Torna alla ricetta" ,recipe_path(@recipe), class: "btn btn-info" %>
+</fieldset>
+<br>
 
-		<%= render 'form' %>
+<% end %>
+<br>
+<br>
+<br>
+<br>
+
 
 	</div>
+	
 
 
