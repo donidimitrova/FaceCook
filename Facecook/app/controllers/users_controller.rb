@@ -7,8 +7,8 @@ class UsersController < ApplicationController
 		 @recipes = cuoco.recipes
 		 @numeroricette=@recipes.count
 		 @media=0
-		  .each do |recipe|
-		 end		
+
+		 	
 		end	 
 	end			
 		

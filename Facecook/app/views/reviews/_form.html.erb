@@ -1,8 +1,8 @@
 <%= form_for([@recipe, @recipe.reviews.build]) do |f| %>
     <%= f.number_field :rating,  min: 1, max: 5, :required=>true  %>
-	<%= f.button :submit, :class => "btn-custom2" %>
-<% end %>
-<%= link_to "Torna alla ricetta" ,recipe_path(@recipe) %>
+	<%= f.button :Conferma, :class => "btn-custom2" %>
+<% end %><br>
+<button type="button" class="btn btn-info"><%= link_to "Torna alla ricetta" ,recipe_path(@recipe) %></button>
 
 
 

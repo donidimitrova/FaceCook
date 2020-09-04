@@ -3,43 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /* Reviews styles */
 
-.reviews {
-
-	@include background-title;
-	margin-top: 40px;
-
-	h1 {
-		margin-top: 0;
-		margin-bottom: 15px;
-		font-size: 2em;
-	}
-
-	.review {
-		border-bottom: 1px solid gainsboro;
-		margin-bottom: 15px;
-		padding-bottom: 10px;
-
-		.review-comment {
-			font-size: 1.05em;
-			line-height: 1.5;
-		}
-
-	}
-
-	.new-review {
-		padding-top: 8px;
-	}
-
-}
-
-/* New RecipeForm styles */
-
-.new-recipe-form {
-	@include background-title;
-
-	h1 {
-		margin-top: 0;
-	}
 
 	#category_id {
 		margin-bottom: 10px;
@@ -56,7 +19,6 @@
 
 .edit-recipe-form {
 
-	@include background-title;
 
 	h1 {
 		margin-top: 0;
@@ -75,7 +37,7 @@
 /* New/Edit review form styles */
 
 .new-review-form, .edit-review-form {
-	@include background-title;
+	
 
 	h1 {
 		margin-top: 0;
@@ -96,7 +58,7 @@
 /* Signup/Login form styles */
 
 .signup-form {
-	@include background-title;
+	
 
 	h2 {
 		margin-top: 0;
@@ -105,8 +67,7 @@
 }
 
 .login-form {
-	@include background-title;
-
+	
 	h2 {
 		margin-top: 0;
 	}

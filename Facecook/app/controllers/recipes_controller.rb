@@ -52,8 +52,8 @@ skip_before_action :verify_authenticity_token
 	
         def destroy
          #authorize! :manage, Recipe
-	 @recipe.destroy
-	 redirect_to recipes_path
+         @recipe.destroy
+         redirect_to root_path
          flash[:success] = 'Ricetta eliminata!'
 	end
         

@@ -1,4 +1,4 @@
-<div class="page-header"><h1>Modifica Ricetta</h1></div>
+<div class="page-header"><h1 style="font-family: 'Trade-Winds',cursive; letter-spacing:1px">Modifica Ricetta</h1></div>
 
 <%= form_for @recipe do |f| %>
 
@@ -24,11 +24,9 @@
   </div>
 
 
-
   <div class="actions">
-    <%= f.submit "Modifica ricetta", class: 'btn btn-primary' %>
-  </div>
-  <br>
-<%= link_to "Torna alla ricetta" ,recipe_path(@recipe) %>
+    <%= f.submit "Modifica ricetta", class: 'btn btn-info' %>
+  </div><br>
+  <%= link_to "Torna alla ricetta" ,recipe_path(@recipe), class: "btn btn-info"%>
 
 <% end %>

@@ -14,8 +14,11 @@
           <h3>Foto non disponibile!</h3>  
         <% end%>
        </div>
-       <div class="panel-footer" align="center"><%= @count+=1%>° <%= cuoco.name%></div>
-       <%=cuoco.recipes.count%>
+       <div class="panel-footer" align="center">
+        <%= @count+=1%>° <%= cuoco.name%><br>
+        Numero di ricette: <%=cuoco.recipes.count%>
+       </div>
+       
       </div>
     </div>
 <% end %>

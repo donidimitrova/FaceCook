@@ -1,53 +1,34 @@
-<h2><%= @recipe.nome %></h2>
-<ul id="details">
+<h1 style="font-family: 'Trade-Winds',cursive; letter-spacing:1px"><%= @recipe.nome %></h1><br>
 <div class="row">
-  <div class="col-md-5">
-  <li>
-    <h4>Autore: 
-    <%= @recipe.user.name %> <%= @recipe.user.cognome%></h4>
-  </li>
-  <li>
-    <h4>Nome:
-    <%= @recipe.nome %></h4>
-  </li>
-  <li>
-    <h4>Categoria:
-    <%= @recipe.category.name %></h4>
-  </li>
-  <li>
-    <h4>Descrizione:
-    <%= @recipe.descrizione %></h4>
-  </li>
-  <li>
-    <h4>Ingredienti:
-    <%= @recipe.link %></h4>
-  </li>
-  <li>
-    <h4>Media voti:
-    <%= @average_review %> / 5</h4>
-  </li>
+  <div class="col-md-4">
+   <%= image_tag @recipe.immagine.url(:medium),class:'imgrecipe'  %>
   </div>
-  <div class="col-md-2">
-    <%= image_tag @recipe.immagine.url(:medium),class:'img'  %>
+  <div class="col-md-8 cornice">
+    <h4><b>Autore:</b> <%= @recipe.user.name %> <%= @recipe.user.cognome%></h4>
+    <h4><b>Nome:</b> <%= @recipe.nome %></h4>
+    <h4><b>Categoria:</b> <%= @recipe.category.name %></h4>
+    <h4><b>Ingredienti:</b> <%= @recipe.link %></h4>
+    <h4 style="word-wrap: break-word;"><b>Descrizione:</b> <%= @recipe.descrizione %></h4>
+    <h4><b>Media voti:</b> <%= @average_review %> / 5</h4>
   </div>
-  </div>
-</ul>
+</div>
+<br>
 <%if user_signed_in?%>
  <% if can? :create,Review%>  
-  <%= link_to "Aggiungi un voto",new_recipe_review_path(@recipe)%><br>
+  <%= link_to "Aggiungi un voto",new_recipe_review_path(@recipe), class: "btn btn-info"%>
  <%end%> 
  <%if @recipe.user_id == current_user.id%>
-  <%= link_to "Modifica ricetta", edit_recipe_path(@recipe)%><br>
-  <%=link_to "Elimina ricetta", recipe_path(@recipe), :method => :delete, data: { confirm: "Sei sicuro?" }%><br>
+  <%= link_to "Modifica ricetta",edit_recipe_path(@recipe), class: "btn btn-info"%>
+  <%= link_to "Elimina ricetta",recipe_path(@recipe), :method => :delete, data: { confirm: "Sei sicuro?" }, class: "btn btn-danger"%>
  <%end%>
  <!--<%= link_to "Torna alle ricette" ,:back %>-->
  <%if @recipe.category.name=="Colazione"%>
- <a href="/ricette?category=Colazione">Torna alle ricette</a>
+ <a type="button" class="btn btn-info" href="/ricette?category=Colazione">Torna alle ricette</a>
  <%end%>
   <%if @recipe.category.name=="Pranzo"%>
- <a href="/ricette?category=Pranzo">Torna alle ricette</a>
+ <a type="button" class="btn btn-info" href="/ricette?category=Pranzo">Torna alle ricette</a>
  <%end%>
   <%if @recipe.category.name=="Cena"%>
- <a href="/ricette?category=Cena">Torna alle ricette</a>
+ <a type="button" class="btn btn-info" href="/ricette?category=Cena">Torna alle ricette</a>
  <%end%>
 <%end%>
