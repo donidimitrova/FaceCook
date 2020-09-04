@@ -10,6 +10,10 @@ class Ability
       if user.present?
        if user.categoria==1
          can :manage, Recipe, user_id: user.id
+         cannot :create, Review
+       end
+       if user.categoria==2
+         can :create, Review
        end
       end
   #     if user.cuoco?

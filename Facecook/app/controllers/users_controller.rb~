@@ -2,14 +2,7 @@ class UsersController < ApplicationController
 		before_action :authenticate_user!
 	
 	def classifica
-		@cuochi=User.where(:categoria => '1')
-		@cuochi.each do |cuoco|
-		 @recipes = cuoco.recipes
-		 @numeroricette=@recipes.count
-		 @media=0
-		  .each do |recipe|
-		 end		
-		end	 
+		@cuochi =User.where(:categoria => '1')
 	end			
 		
 	def update

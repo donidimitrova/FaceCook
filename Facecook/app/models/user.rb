@@ -7,7 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, 
          :omniauthable, :omniauth_providers => [:facebook]
   
-  has_attached_file :avatar, styles: { medium: "300x300", thumb: "100x100" }
+  has_attached_file :avatar, styles: { medium: "200x250", thumb: "100x100" }
   # Validate content type
   validates_attachment_content_type :avatar, content_type: /\Aimage/
   # Validate filename

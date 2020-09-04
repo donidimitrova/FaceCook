@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   get 'help' => 'pages#help' 
   get 'contattaci' => 'contact#contattaci'
   get 'regolamento' => 'pages#regolamento'
-  get 'classifica' => 'pages#classifica'
+  get 'classifica' => 'users#classifica'
   get 'login' => 'pages#login'
   get 'sceglicategoria' => 'scegli#select'
   get 'pasto' => 'scegli#pasto'

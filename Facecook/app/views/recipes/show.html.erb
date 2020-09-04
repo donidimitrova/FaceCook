@@ -32,8 +32,10 @@
   </div>
   </div>
 </ul>
-<%if user_signed_in?%>  
+<%if user_signed_in?%>
+ <% if can? :create,Review%>  
   <%= link_to "Aggiungi un voto",new_recipe_review_path(@recipe)%><br>
+ <%end%> 
  <%if @recipe.user_id == current_user.id%>
   <%= link_to "Modifica ricetta", edit_recipe_path(@recipe)%><br>
   <%=link_to "Elimina ricetta", recipe_path(@recipe), :method => :delete, data: { confirm: "Sei sicuro?" }%><br>

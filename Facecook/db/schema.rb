@@ -15,12 +15,6 @@ ActiveRecord::Schema.define(version: 2020_09_02_144022) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "categoria", force: :cascade do |t|
-    t.string "nome"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -31,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_09_02_144022) do
     t.string "nome"
     t.string "categoria"
     t.text "immagine"
-    t.string "descrizione"
+    t.text "descrizione"
     t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -44,12 +38,6 @@ ActiveRecord::Schema.define(version: 2020_09_02_144022) do
     t.bigint "immagine_file_size"
     t.datetime "immagine_updated_at"
     t.integer "category_id"
-    t.float "skill", default: 25.0
-    t.float "doubt", default: 8.333333333333334
-    t.integer "wins", default: 0
-    t.integer "losses", default: 0
-    t.integer "draws", default: 0
-    t.string "expectations"
     t.integer "user_id"
   end
 
