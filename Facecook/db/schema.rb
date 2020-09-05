@@ -15,25 +15,10 @@ ActiveRecord::Schema.define(version: 2020_09_04_150721) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "active_storage_attachments", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "record_type", null: false
-    t.bigint "record_id", null: false
-    t.bigint "blob_id", null: false
+  create_table "categoria", force: :cascade do |t|
+    t.string "nome"
     t.datetime "created_at", null: false
-    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
-    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
-  end
-
-  create_table "active_storage_blobs", force: :cascade do |t|
-    t.string "key", null: false
-    t.string "filename", null: false
-    t.string "content_type"
-    t.text "metadata"
-    t.bigint "byte_size", null: false
-    t.string "checksum", null: false
-    t.datetime "created_at", null: false
-    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+    t.datetime "updated_at", null: false
   end
 
   create_table "categories", force: :cascade do |t|
@@ -42,20 +27,11 @@ ActiveRecord::Schema.define(version: 2020_09_04_150721) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "microposts", force: :cascade do |t|
-    t.text "content"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id", "created_at"], name: "index_microposts_on_user_id_and_created_at"
-    t.index ["user_id"], name: "index_microposts_on_user_id"
-  end
-
   create_table "recipes", force: :cascade do |t|
     t.string "nome"
     t.string "categoria"
     t.text "immagine"
-    t.text "descrizione"
+    t.string "descrizione"
     t.string "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -68,6 +44,12 @@ ActiveRecord::Schema.define(version: 2020_09_04_150721) do
     t.bigint "immagine_file_size"
     t.datetime "immagine_updated_at"
     t.integer "category_id"
+    t.float "skill", default: 25.0
+    t.float "doubt", default: 8.333333333333334
+    t.integer "wins", default: 0
+    t.integer "losses", default: 0
+    t.integer "draws", default: 0
+    t.string "expectations"
     t.integer "user_id"
   end
 
@@ -98,17 +80,11 @@ ActiveRecord::Schema.define(version: 2020_09_04_150721) do
     t.string "avatar_content_type"
     t.bigint "avatar_file_size"
     t.datetime "avatar_updated_at"
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
     t.text "descrizione"
     t.boolean "admin", default: false
     t.float "avg"
-    t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "microposts", "users"
 end
