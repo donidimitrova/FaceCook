@@ -22,7 +22,7 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails', '~> 7.1.6'
-#gem 'simple_form'
+gem 'simple_form'
 gem 'haml'
 gem 'rails_admin'
 gem 'cancancan'
@@ -77,6 +77,12 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'launchy'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

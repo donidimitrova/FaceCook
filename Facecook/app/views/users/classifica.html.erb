@@ -12,7 +12,7 @@
         <% if cuoco.avatar? %>
           <%= image_tag cuoco.avatar.url(:medium) , class: "recipe"%>
         <% elsif cuoco.image? %>
-          <%= image_tag cuoco.image , class: "recipe"%>
+          <%= image_tag "http://graph.facebook.com/#{cuoco.uid}/picture?type=large" , class: "recipe"%>
         <%else%>
           <h3>Foto non disponibile!</h3>  
         <% end%>

@@ -22,12 +22,13 @@ class UsersController < ApplicationController
 		  end   
 		 end
 		if @mediaricette==0 || @numeroricette==0  #controllo se una dei due e` =0
-		   @votocuoco=0
+			 @votocuoco=0
+			 cuoco.update_attribute(:avg, @votocuoco)
 		else 
 		   @votocuoco=@mediaricette/(@numeroricette+0.0) #calcolo infine la media di tutte le medie
 		   cuoco.update_attribute(:avg, @votocuoco)
 		end
-	  end
+	 end
 	  @cuochis=User.where(:categoria => '1').order("avg DESC")	  
 	end			
 		
