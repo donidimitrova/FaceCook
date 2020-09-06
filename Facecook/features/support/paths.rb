@@ -22,14 +22,12 @@ module NavigationHelpers
     when /^the Profile\s?page$/
       '/users/edit'  
      
-    when /^the Recipes\s?page$/
-      '/recipes/ricette'    
+    when /^the New Recipe\s?page$/
+      new_recipe_path 
     
     when /^the Recipe Details\s?page$/
-      recipe_path(@recipe.id)
-      
-    when /^the New Review\s?page$/
-      new_recipe_review_path(@recipe) 
+      recipes_path(@recipe.id)
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

@@ -61,7 +61,7 @@ skip_before_action :verify_authenticity_token
           if params[:category].blank?
 	   @recipes =Recipe.all.order("created_at DESC")
           else
-           @category_id=Category.find_by(name: params[:category]).id
+           @category_id=Category.find_by(name: params[:category])
            @recipes=Recipe.where(:category_id => @category_id).order("created_at DESC")
           end  
         end

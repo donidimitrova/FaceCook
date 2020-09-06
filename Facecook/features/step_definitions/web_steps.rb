@@ -67,15 +67,19 @@ end
 
 #our step defitiom
 Given('a user') do
-  @user = User.create(name: 'name', cognome: 'cognome', email: 'user@user.com', password: 'user12345', categoria: '2', admin: false)
-end
-
-Given('a second user') do
-  @second_user = User.create(name: 'name1', cognome: 'surname1', email: 'second@user.com', password: 'user12345', categoria: '1', admin: false)
+  @user = User.create(name: 'name', cognome: 'cognome', email: 'user@user.com', password: 'user12345', categoria: '1', admin: false)
 end
 
 Given('a recipe') do
-  @recipe = Recipe.create(user_id: @user.id, nome: 'ricetta1', category_id: '1', descrizione: "buona", link: "")
+  @recipe = Recipe.create(user_id: @user.id, nome: 'pasta aglio e olio', category_id: '2', descrizione: "Semplice e gustosa", link: "aglio, olio, peperoncino")
+end
+
+When /^I select option "(.*?)" from element "(.*?)"$/ do |option, selector|
+  all(selector).last.find(:option, option).select_option
+end
+
+And(/^I attach "(.*?)" to "(.*?)"$/) do |field, file|
+  page.attach_file field, File.join(Rails.root, file)
 end
 
 # Use this to fill in an entire form with data from a table. Example:
