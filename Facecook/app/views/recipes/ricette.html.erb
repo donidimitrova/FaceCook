@@ -1,15 +1,18 @@
-<h1 style="font-family: 'Trade-Winds',cursive; letter-spacing:1px"><%= params[:category]%></h1><br>
+<link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Imprima&display=swap" rel="stylesheet">
+<h1 style="font-family: 'Rowdies', cursive;  letter-spacing: 1px;"><%= params[:category]%></h1><br>
 <%if @recipes.count==0%>
- <h1 style="font-family: 'Trade-Winds',cursive; letter-spacing:1px">Non ci sono ricette in questa categoria</h1>
+ <h1 style="font-family: 'Merriweather', serif;">Non ci sono ricette in questa categoria</h1>
 <%else%>
-<div class="row">
+<div class="row" style="font-family: 'Merriweather', serif;">
   <% @recipes.each do |recipe| %> 
     <div class="col-md-3">
       <div class="panel panel-default panelricette" onclick="location.href='/recipes/<%= recipe.id%>'">
        <div class="panel-body">
         <%= image_tag recipe.immagine.url(:medium), class: "recipe"%>
        </div>
-       <div class="panel-footer" align="center"><%= recipe.nome%></div>
+       <div class="panel-footer" style="font-family: 'Merriweather', serif;" align="center"><b><%= recipe.nome%></b></div>
       </div>
     </div>
 <% end %>

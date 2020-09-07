@@ -1,5 +1,25 @@
 class RegistrationsController < Devise::RegistrationsController
   def create
+    if (params[:user][:username] == "")
+      flash[:alert] = "Campo obbligatorio username lasciato in bianco"
+      redirect_to  new_user_registration_path
+      return
+    end
+    if ( params[:user][:name] == "" )
+      flash[:alert] = "Campo obbligatorio nome lasciato in bianco"
+      redirect_to  new_user_registration_path
+      return
+    end
+    if ( params[:user][:cognome] == "" )
+      flash[:alert] = "Campo obbligatorio cognome lasciato in bianco"
+      redirect_to  new_user_registration_path
+      return
+    end
+    if ( params[:user][:categoria] == "")
+      flash[:alert] = "Campo obbligatorio categoria lasciato in bianco"
+      redirect_to  new_user_registration_path
+      return
+    end
     #build the resource
     build_resource(sign_up_params)   
     #Verifying Captcha
@@ -22,5 +42,17 @@ class RegistrationsController < Devise::RegistrationsController
       # Allows user to update registration information without password.
       resource.update_without_password(params.except("current_password"))
     end
+
+    private
+
+    def sign_up_params
+      
+      params.require(:user).permit(:username, :name,:cognome, :email, :password, :password_confirmation,:categoria)
+    end
+  
+    def account_update_params
+      params.require(:user).permit(:username, :name,:cognome, :email, :password, :password_confirmation,:categoria, :descrizione)
+    end
+
 
   end

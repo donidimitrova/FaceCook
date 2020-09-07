@@ -1,24 +1,27 @@
-<div class="page-header"><h1 style="font-family: 'Trade-Winds',cursive; letter-spacing:1px">Modifica Ricetta</h1></div>
+<link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Imprima&display=swap" rel="stylesheet">
+<div class="center jumbotron page-header"><h1 style="font-family: 'Rowdies', cursive;  letter-spacing: 1px;">Modifica Ricetta</h1>
 
 <%= form_for @recipe do |f| %>
 
-<div class="field">
+<div class="field"style="font-family: 'Merriweather', serif;">
     <%= f.label :nome %><br />
     <%= f.text_field :nome, autofocus: true, autocomplete: "nome" %>
   </div>
-  <div class="field">
+  <div class="field" style="font-family: 'Merriweather', serif;">
   <%= f.label :categoria %><br />
   <%= f.select :category_id, @categories%>
   </div>
-  <div class="field">
+  <div class="field" style="font-family: 'Merriweather', serif;">
     <%= f.label :Ingredienti %><br />
     <%= f.text_area :link, cols: 40, rows: 2, autofocus: true, autocomplete: "link" %>
   </div>
-  <div class="field">
+  <div class="field" style="font-family: 'Merriweather', serif;">
     <%= f.label :descrizione %><br />
     <%= f.text_area :descrizione,  cols: 40, rows: 3, autofocus: true, autocomplete: "descrizione" %>
   </div>
-    <div class="form-group">
+    <div class="form-group" style="font-family: 'Merriweather', serif;">
     <%= f.label :immagine%>
     <%= f.file_field :immagine %>
   </div>
@@ -30,3 +33,4 @@
   <%= link_to "Torna alla ricetta" ,recipe_path(@recipe), class: "btn btn-info"%>
 
 <% end %>
+</div>

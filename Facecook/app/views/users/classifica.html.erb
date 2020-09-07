@@ -1,5 +1,9 @@
-<h1>Classifica dei cuochi</h1>
-<h4>Tale classifica viene stabilita in base alla media dei voti ottenuti dalle ricette di ogni cuoco!</h4>
+
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&display=swap" rel="stylesheet">
+
+<h1  style="font-family: 'Rowdies', cursive;  letter-spacing: 1px;">  Classifica dei cuochi</h1>
+<h4 style="font-family: 'Merriweather', serif;">Tale classifica viene stabilita in base alla media dei voti ottenuti dalle ricette di ogni cuoco!</h4>
 <div class="row">
     <%@count=0
       @cuochis.each do |cuoco|
@@ -14,7 +18,7 @@
         <% elsif cuoco.image? %>
           <%= image_tag "http://graph.facebook.com/#{cuoco.uid}/picture?type=large" , class: "recipe"%>
         <%else%>
-          <h3>Foto non disponibile!</h3>  
+          <h3 style="font-family: 'Merriweather', serif;">Foto non disponibile!</h3>  
         <% end%>
        </div>
        <div class="panel-footer" align="center">

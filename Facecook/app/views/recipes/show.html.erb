@@ -1,5 +1,8 @@
-<h1 style="font-family: 'Trade-Winds',cursive; letter-spacing:1px"><%= @recipe.nome %></h1><br>
-<div class="row">
+<link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Imprima&display=swap" rel="stylesheet">
+<h1 style="font-family: 'Rowdies', cursive;  letter-spacing: 1px;"><%= @recipe.nome %></h1><br>
+<div class="row" style="font-family: 'Merriweather', serif;">
   <div class="col-md-4">
    <%= image_tag @recipe.immagine.url(:medium),class:'imgrecipe'  %>
   </div>

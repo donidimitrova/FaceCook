@@ -1,24 +1,27 @@
-<div class="page-header"><h1 style="font-family: 'Trade-Winds',cursive; letter-spacing:1px">Inserisci Ricetta</h1></div>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,900&display=swap" rel="stylesheet">
+
+<div class=" center jumbotron page-header"><h1 style="font-family: 'Rowdies', cursive;  letter-spacing: 1px;">Inserisci Ricetta</h1>
 
 <%= form_for @recipe do |f| %>
 
-<div class="field">
+<div class="field" style="font-family: 'Merriweather', serif;">
     <%= f.label :nome %><br />
     <%= f.text_field :nome, autofocus: true, autocomplete: "Nome", :required => true %>
   </div>
-  <div class="field">
+  <div class="field" style="font-family: 'Merriweather', serif;">
   <%= f.label :categoria %><br />
   <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Seleziona categoria", :required => true) %>
   </div>
-  <div class="field">
+  <div class="field" style="font-family: 'Merriweather', serif;">
     <%= f.label :Ingredienti %><br />
     <%= f.text_area :link, cols: 40, rows: 2,autofocus: true, autocomplete: "Ingredienti", :required => true%>
   </div>
-  <div class="field">
+  <div class="field" style="font-family: 'Merriweather', serif;">
     <%= f.label :descrizione %><br />
     <%= f.text_area :descrizione,  cols: 40, rows: 3, autofocus: true, autocomplete: "Descrizione", :required => true %>
   </div>
-    <div class="form-group">
+    <div class="form-group" style="font-family: 'Merriweather', serif;">
     <%= f.label :immagine%>
     <%= f.file_field :immagine,  :required => true %>
   </div>
@@ -31,7 +34,7 @@
   <br>
   <%= link_to "Torna alla home",root_path, class: "btn btn-info"%>
 <% end %>
-
+</div>
 
 
 

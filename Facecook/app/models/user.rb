@@ -16,7 +16,7 @@ class User < ApplicationRecord
   do_not_validate_attachment_file_type :avatar
 
   do_not_validate_attachment_file_type :image
-
+  validates_presence_of :name, :cognome, :email, :password, :categoria, :on => :create
   
 
 #Add custom methods to the User model
