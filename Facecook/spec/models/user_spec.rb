@@ -20,8 +20,8 @@ RSpec.describe User, :type => :model do
             expect(@user).to_not be_valid
         end
         it "non valido con email registrata" do
-            @user1 = User.create!(:name => "nome1", :cognome => "cognome1", :email => "example1@example.com", :password => "password", :categoria=>'2')
-            @user2 = User.new(:name => "nome2", :cognome => "cognome2", :email => "example1@example.com", :password => "password",:categoria=>'2')
+            @user1 = User.create!(:username=>'username',:name => "nome1", :cognome => "cognome1", :email => "example1@example.com", :password => "password", :categoria=>'2')
+            @user2 = User.new(:username=> 'username',:name => "nome2", :cognome => "cognome2", :email => "example1@example.com", :password => "password",:categoria=>'2')
             expect(@user2).to_not be_valid
             @user1.destroy
         end

@@ -16,7 +16,7 @@
        <h5 > </strong><% if @user.avatar? %>
       <%= image_tag @user.avatar.url(:thumb), :style => " width: 150px; height: 150px;border-radius: 50%;"   %>
     <% elsif @user.image? %>
-    <%= image_tag "http://graph.facebook.com/#{current_user.uid}/picture?type=large", :style => " width: 150px; height: 150px;border-radius: 50%;" %>
+    <%= image_tag @user.image, :style => " width: 150px; height: 150px;border-radius: 50%;" %>
     <% end %></h5>
 
 

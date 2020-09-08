@@ -24,7 +24,9 @@
   <body>
 
   <%# Partials visibile con il render %>
+  <% unless request.path == sceglicategoria_path%>
       <%= render 'layouts/header' %>
+      <% end %>
 
 <div class="container fluid bodyContent">
 <%# yield inserisce i contenuti di ogni pagina nel layout del sito. %>
@@ -36,8 +38,11 @@
   <% end %>
 </div>
     <%= yield %>
+      <% unless request.path == sceglicategoria_path%>
     <%= render 'layouts/footer' %>
+    <% end %>
 </div>
+
 
 
   </body>

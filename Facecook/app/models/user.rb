@@ -16,7 +16,7 @@ class User < ApplicationRecord
   do_not_validate_attachment_file_type :avatar
 
   do_not_validate_attachment_file_type :image
-  validates_presence_of :name, :cognome, :email, :password, :categoria, :on => :create
+  validates_presence_of :username, :name, :cognome, :email, :password, :categoria, :on => :create
   
 
 #Add custom methods to the User model
@@ -30,6 +30,7 @@ class User < ApplicationRecord
         end
         
         def self.from_omniauth(auth)
+
           where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
             user.username = auth.info.name
             user.name = auth.info.first_name
@@ -37,9 +38,9 @@ class User < ApplicationRecord
             user.email = auth.info.email
             user.password = Devise.friendly_token[0,20]
       
-            user.image =auth.info.image # assuming the user model has an image
+            user.image ="https://graph.facebook.com/#{auth["uid"]}/picture?type=large"# assuming the user model has an image
 
-            user.categoria = nil
+            user.categoria = 0
             user.descrizione= ' '
             user.save!
           end

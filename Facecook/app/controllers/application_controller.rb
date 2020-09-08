@@ -27,7 +27,7 @@ class ApplicationController < ActionController::Base
     end
     def after_sign_in_path_for(current_user)
         
-        if User.find(current_user.id).provider == "facebook" && User.find(current_user.id).categoria == nil
+        if User.find(current_user.id).provider == "facebook" && User.find(current_user.id).categoria == 0
 	        sceglicategoria_path
 
         else

@@ -16,7 +16,7 @@
         <% if cuoco.avatar? %>
           <%= image_tag cuoco.avatar.url(:medium) , class: "recipe"%>
         <% elsif cuoco.image? %>
-          <%= image_tag "http://graph.facebook.com/#{cuoco.uid}/picture?type=large" , class: "recipe"%>
+           <%= image_tag cuoco.image, :style => " width: 200px; height: 200px;" %>
         <%else%>
           <h3 style="font-family: 'Merriweather', serif;">Foto non disponibile!</h3>  
         <% end%>
