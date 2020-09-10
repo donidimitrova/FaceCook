@@ -11,7 +11,7 @@
   
   <h4 style="font-family: 'Merriweather', serif;">
   <ul>
-  <li>Un utente può registrarsi alla web app attraverso facebook oppure inserendo le proprie
+  <li>Un utente può registrarsi alla webapp attraverso facebook oppure inserendo le proprie
 credenziali richieste direttamente sulla piattaforma. </li> <br />
   <li>Sarà richiesta la categoria di appartenenza e potrà essere selezionata una tra le due scelte: cuoco o appassionato.</li> <br />
   <li>Un utente appassionato potrà ricercare e visionare diverse ricette in base alle proprie esigenze.
@@ -20,9 +20,9 @@ classifica dei cuochi basata sul punteggio ottenuto dalle diverse ricette inseri
 quest’ultimi.</li> <br />
   <li> Un utente cuoco può inserire delle ricette e visionare la classifica dei cuochi.</li><br />
 <li> Tutti gli utenti potranno modificare il proprio username,la password corrente, l'immagine che gli rappresenta
-e contattare gli amministratori della web app.</li><br />
+e contattare gli amministratori della webapp.</li><br />
 <li>  Gli amministratori hanno accesso a tutte le funzionalità, ossia gestione degli utenti e
-gestione delle ricette inserite dai cuochi. Possono eliminare gli utenti, modificare una ricetta, modificare i voti oppure la classifica dei cuochi
+gestione delle ricette inserite dai cuochi. Possono bannare gli utenti, modificare una ricetta oppure la classifica dei cuochi
 nel caso lo ritengono opportuno.</li><br />
 </ul>
 

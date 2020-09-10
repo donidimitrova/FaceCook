@@ -8,7 +8,7 @@
 <h1 style="font-family: 'Rowdies', cursive;  letter-spacing: 1px;">  Descrizione</h1>
 
 
-  <h3 style="font-family: 'Merriweather', serif;"> <strong> Sei un cuoco o un appasionato di cucina? <br /> Allora questa è la web app adatta per te!</strong> </h3><br />
+  <h3 style="font-family: 'Merriweather', serif;"> <strong> Sei un cuoco o un appasionato di cucina? <br /> Allora questa è la webapp adatta per te!</strong> </h3><br />
   <h4 style="font-family: 'Merriweather', serif;">Qui troverai i migliori professionisti del mondo che condivideranno le loro ricette con te. <br /> <br />
   Dovrai scegliere la categoria a cui appartieni tra cuoco o appassionato dopodichè il gioco è fatto. <br />
   <div class="row">
