@@ -20,10 +20,9 @@ skip_before_action :verify_authenticity_token
              #   authorize! :manage, Recipe
 		@recipe = current_user.recipes.build(recipe_params)
                 @recipe.category_id = params[:category_id] 
-                if @recipe.save
-                 flash[:success] = "La ricetta è stata inserita!"
-                 redirect_to recipe_path(@recipe)
-	        end
+                @recipe.save
+                flash[:success] = "La ricetta è stata inserita!"
+	        redirect_to ricette_path
         end
 
 	def update
@@ -52,8 +51,9 @@ skip_before_action :verify_authenticity_token
 	
         def destroy
          #authorize! :manage, Recipe
+         @category_name=Category.find_by(id: @recipe.category_id)
          @recipe.destroy
-         redirect_to root_path
+	 redirect_to ricette_path(category: @category_name.name)
          flash[:success] = 'Ricetta eliminata!'
 	end
         

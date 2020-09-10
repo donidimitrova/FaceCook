@@ -18,7 +18,7 @@ RSpec.describe 'Inserisci descrizione', type: :feature do
     click_on 'Profilo'
     fill_in 'user_descrizione', with: 'ciao'
     click_on 'Aggiorna descrizione'
-    expect(page).to have_content('ciao')
+    expect(page).to have_content('abydvvb')
     fill_in 'user_descrizione', with: 'ciao a tutti'
     click_on 'Aggiorna descrizione'
     expect(page).to have_content('ciao a tutti')

@@ -3,7 +3,7 @@
 
 <div class=" center jumbotron page-header"><h1 style="font-family: 'Rowdies', cursive;  letter-spacing: 1px;">Inserisci Ricetta</h1>
 
-<%= form_for @recipe do |f| %>
+<%= form_for(@recipe, html: { method: :post }) do |f| %>
 
 <div class="field" style="font-family: 'Merriweather', serif;">
     <%= f.label :nome %><br />
@@ -29,7 +29,7 @@
 
 
   <div class="actions">
-    <%= f.submit "Inserisci ricetta", class: 'btn btn-info' %>
+    <%= f.submit "Salva", class: 'btn btn-info' %>
   </div>
   <br>
   <%= link_to "Torna alla home",root_path, class: "btn btn-info"%>

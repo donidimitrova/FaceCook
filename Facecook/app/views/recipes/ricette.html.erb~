@@ -1,11 +1,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Trade+Winds&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Imprima&display=swap" rel="stylesheet">
-<%if params[:category].blank?%>
-<h1 style="font-family: 'Rowdies', cursive;  letter-spacing: 1px;">Tutte le ricette</h1><br>
-<%else%>
 <h1 style="font-family: 'Rowdies', cursive;  letter-spacing: 1px;"><%= params[:category]%></h1><br>
-<%end%>
 <%if @recipes.count==0%>
  <h1 style="font-family: 'Merriweather', serif;">Non ci sono ricette in questa categoria</h1>
 <%else%>

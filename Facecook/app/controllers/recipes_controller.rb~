@@ -20,10 +20,9 @@ skip_before_action :verify_authenticity_token
              #   authorize! :manage, Recipe
 		@recipe = current_user.recipes.build(recipe_params)
                 @recipe.category_id = params[:category_id] 
-                if @recipe.save
-                 flash[:success] = "La ricetta è stata inserita!"
-                 redirect_to recipe_path(@recipe)
-	        end
+                @recipe.save
+                flash[:success] = "La ricetta è stata inserita!"
+	        redirect_to ricette_path
         end
 
 	def update
@@ -38,7 +37,6 @@ skip_before_action :verify_authenticity_token
 	end
 
 	def show
-		
 		if @recipe.reviews.blank?
 			@average_review=0
 		else
@@ -53,18 +51,20 @@ skip_before_action :verify_authenticity_token
 	
         def destroy
          #authorize! :manage, Recipe
-	 @recipe.destroy
-	 redirect_to recipes_path
+         @category_name=Category.find_by(id: @recipe.category_id)
+         @recipe.destroy
+	 redirect_to ricette_path(category: @category_name.name)
          flash[:success] = 'Ricetta eliminata!'
 	end
         
         def ricette
-          if params[:category].blank?
-	   @recipes =Recipe.all.order("created_at DESC")
-          else
-           @category_id=Category.find_by(name: params[:category]).id
-           @recipes=Recipe.where(:category_id => @category_id).order("created_at DESC")
-          end  
+          @recipes =Recipe.all.order("created_at DESC")
+          #if params[:category].blank?
+	   #@recipes =Recipe.all.order("created_at DESC")
+          #else
+           #@category_id=Category.find_by(name: params[:category])
+           #@recipes=Recipe.where(:category_id => @category_id).order("created_at DESC")
+          #end  
         end
         
 	private
