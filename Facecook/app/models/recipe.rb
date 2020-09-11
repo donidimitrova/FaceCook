@@ -13,6 +13,7 @@ class Recipe < ApplicationRecord
                      validates_attachment_file_name :immagine, matches: [/png\Z/, /jpe?g\Z/]
                      # Explicitly do not validate
                      do_not_validate_attachment_file_type :immagine
+		     validates_presence_of :nome, :descrizione, :link, :immagine
 
 
 
