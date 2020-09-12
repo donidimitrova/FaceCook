@@ -34,7 +34,7 @@ RSpec.describe User, :type => :model do
     end
     describe 'Modifica' do
         it "non è valido con nome bianco" do
-            @user = User.new(:username=>"username",:name => "nome", :cognome => "cognome1", :email => "example@example.com", :password => "password", :password_confirmation => "password", :categoria=>'1')
+            @user = User.new(:username=>"username",:name => "nome", :cognome => "cognome1", :email => "example@example.com", :password => "password", :categoria=>'1')
             expect(@user).to be_valid
             @user.name = ""
             expect(@user).to_not be_valid
@@ -42,7 +42,7 @@ RSpec.describe User, :type => :model do
         end
 
         it "non è valido con cognome bianco" do
-            @user = User.new(:username=>"username",:name => "nome", :cognome => "cognome1", :email => "example@example.com", :password => "password", :password_confirmation => "password", :categoria=>'1')
+            @user = User.new(:username=>"username",:name => "nome", :cognome => "cognome1", :email => "example@example.com", :password => "password", :categoria=>'1')
             expect(@user).to be_valid
             @user.cognome = ""
             expect(@user).to_not be_valid

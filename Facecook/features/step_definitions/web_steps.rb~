@@ -67,7 +67,7 @@ end
 
 #our step defitiom
 Given('a user') do
-  @user = User.create(username: 'username',name: 'name', cognome: 'cognome', email: 'user@user.com', password: 'user12345', password_confirmation: 'user12345', categoria: '1', admin: false)
+  @user = User.create(username: 'username',name: 'name', cognome: 'cognome', email: 'user@user.com', password: 'user12345', categoria: '1', admin: false)
 end
 
 Given('a recipe') do

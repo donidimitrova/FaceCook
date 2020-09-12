@@ -26,4 +26,4 @@ Scenario: Cuoco add a recipe
   And I fill in "recipe_descrizione" with "Semplice e gustosa"
   And I attach "recipe_immagine" to "/features/11.jpg"
   And I press "Salva"
-  Then I should be on the Recipes page
+  Then I should be on the Recipe Details page
