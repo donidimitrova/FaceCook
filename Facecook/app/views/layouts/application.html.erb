@@ -30,7 +30,7 @@
 
 <div class="container fluid bodyContent">
 <%# yield inserisce i contenuti di ogni pagina nel layout del sito. %>
-<div id="flash">
+<div id="flash" style="margin-top:12px;">
   <% flash.each do |key, value| %>
     <div class="<%= flash_class(key) %> fade in">
       <%= value %>
