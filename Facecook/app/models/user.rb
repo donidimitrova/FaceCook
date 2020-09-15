@@ -37,6 +37,7 @@ class User < ApplicationRecord
             user.cognome = auth.info.last_name
             user.email = auth.info.email
             user.password = Devise.friendly_token[0,20]
+            user.password_confirmation = user.password
       
             user.image ="https://graph.facebook.com/#{auth["uid"]}/picture?type=large"# assuming the user model has an image
 
